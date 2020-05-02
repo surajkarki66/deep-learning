@@ -68,10 +68,9 @@ class FaceRecognition:
             optimizer= tf.keras.optimizers.SGD(lr=1e-4, momentum=0.9, decay=1e-2 / self.EPOCHS),
             metrics=['accuracy']
         )
-        for i in self.training_generator:
-            print(i)
+      
 
-        history = self.model.fit_generator(
+        history = self.model.fit(
             self.training_generator,
             steps_per_epoch=self.NUMBER_OF_TRAINING_IMAGES//self.BATCH_SIZE,
             epochs=self.EPOCHS,
@@ -111,12 +110,14 @@ class FaceRecognition:
         model = tf.keras.models.load_model(model_path)
         face_array = face_array.astype('float32')
         input_face = np.expand_dims(face_array, axis=0)
-        result = model.predict(input_face)
+        #result = model(input_face)
+       # print(result)
+        result = model.predict_classes(input_face)
         result = np.argmax(result, axis=1)
         index = result[0]
 
         classes = np.load(class_names_path, allow_pickle=True).item()
-        # print(classes, type(classes), classes.items())
+        print(classes, type(classes), classes.items())
         if type(classes) is dict:
             for k, v in classes.items():
                 if k == index:
