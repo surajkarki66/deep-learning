@@ -1,0 +1,11 @@
+tensorflow == 2
+numpy
+opencv-python
+time
+os
+matplotlib	
+pandas
+pillow
+glob
+random
+pickle
