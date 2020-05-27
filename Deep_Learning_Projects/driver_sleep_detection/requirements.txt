@@ -1,0 +1,6 @@
+tensorflow == 2
+numpy
+opencv-python
+time
+os
+
