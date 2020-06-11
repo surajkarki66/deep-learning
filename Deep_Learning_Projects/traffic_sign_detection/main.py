@@ -32,9 +32,12 @@ def spliting(test_size, validation_size):
     y_test = to_categorical(y_test,noOfClasses)
     ############################### TO CHECK IF NUMBER OF IMAGES MATCHES TO NUMBER OF LABELS FOR EACH DATA SET
     print("Data Shapes")
-    print("Train",end = "");print(X_train.shape,y_train.shape)
-    print("Validation",end = "");print(X_validation.shape,y_validation.shape)
-    print("Test",end = "");print(X_test.shape,y_test.shape)
+    print("Train")
+    print(X_train.shape,y_train.shape)
+    print("Validation")
+    print(X_validation.shape,y_validation.shape)
+    print("Test")
+    print(X_test.shape,y_test.shape)
     assert(X_train.shape[0]==y_train.shape[0]), "The number of images in not equal to the number of lables in training set"
     assert(X_validation.shape[0]==y_validation.shape[0]), "The number of images in not equal to the number of lables in validation set"
     assert(X_test.shape[0]==y_test.shape[0]), "The number of images in not equal to the number of lables in test set"
@@ -166,12 +169,10 @@ if __name__ == "__main__":
         shuffle=True
     )
     plot(history)
+    model.save('traffic_sign_detection.h5')
 
         
-    # STORE THE MODEL AS A PICKLE OBJECT
-    pickle_out= open("traffic_model.p","wb")  # wb = WRITE BYTE
-    pickle.dump(model,pickle_out)
-    pickle_out.close()
+    	
     cv2.waitKey(0)
 
 
