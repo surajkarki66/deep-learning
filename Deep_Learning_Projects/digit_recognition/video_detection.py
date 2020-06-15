@@ -6,7 +6,7 @@ import cv2
 
 class VideoDetection:
     def __init__(self):        
-        self.model = tf.keras.models.load_model("digit_model.h5")
+        self.model = tf.keras.models.load_model("mnist_model.h5")
         self.video_count = 0
         self.pred = ''
         fourcc = cv2.VideoWriter_fourcc(*'XVID')
