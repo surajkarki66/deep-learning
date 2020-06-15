@@ -12,9 +12,9 @@ cascPath=os.path.dirname(cv2.__file__)+"/data/haarcascade_frontalface_default.xm
 
 face_classifier = cv2.CascadeClassifier(cascPath)
 classifier =load_model('./model/facial_emotion_vgg.h5')
-classifier.summary()
+#classifier.summary()
 
-class_labels = ['Angry','Happy','Neutral','Sad','Surprise']
+class_labels = ['Angry', 'Happy','Neutral','Sad','Surprise']
 
 cap = cv2.VideoCapture(0)
 
