@@ -16,12 +16,12 @@ def image(filename):
     img =   cv2.resize(gray, (28, 28), interpolation=cv2.INTER_AREA)
     img = img.reshape(1, 28, 28, 1)
     img = img / 255.0
-  	
+
     return img
-   
+
 
 if __name__ == "__main__":
-    model = Model(input_shape=(28, 28, 1))
+    model = Model(input_shape=(28, 28, 1), classes=10)
     train_ds, test_ds = loading_data()
     model.compile(learning_rate=0.01, optimizer='sgd', loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True))
     model.fit(epochs=15, train_ds=train_ds, test_ds=test_ds)
@@ -39,8 +39,8 @@ if __name__ == "__main__":
 
 
 
-    
-   
+
+
 
 
 

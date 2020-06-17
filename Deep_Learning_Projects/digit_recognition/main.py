@@ -7,7 +7,8 @@ from model import build_model
 class Model:
     def __init__(self, input_shape):
         self.input_shape = input_shape
-        self.model = build_model(input_shape= self.input_shape)
+        self.classes = classes
+        self.model = build_model(input_shape= self.input_shape, classes = self.classes)
 
     def compile(self, learning_rate=0.001, optimizer=None, loss=None):
         """
@@ -29,7 +30,7 @@ class Model:
 
         return self.model
 
-    
+
     def fit(self, epochs=1, train_ds = None, test_ds = None):
         history = self.model.fit(train_ds, epochs=epochs, validation_data = test_ds)
         return history
@@ -37,11 +38,11 @@ class Model:
     def save(self, name=None):
         self.model.save(filepath=name)
         return "Your model saved"
-        
+
 
     def predict(self, input):
         prediction = self.model.predict(input)
-        
+
         return prediction
 
 
@@ -49,6 +50,6 @@ class Model:
 
 
 
-        
+
 
 
