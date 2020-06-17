@@ -16,7 +16,7 @@ class NN:
     def __init__(self, input_shape, num_classes):
         self.input_shape = input_shape
         self.num_classes = num_classes
-        self.model = scratch_model(self.input_shape, self.num_classes)
+        self.model = scratch_model(input_shape= self.input_shape, num_classes = self.num_classes)
 
 
     def summary(self, output=None, target=None):
@@ -129,7 +129,7 @@ class NN:
                                  use_multiprocessing=use_multiprocessing, **kwargs)
         return history
 
-    
+
     def save_model(self, path):
         print("Model Saving......")
         self.model.save(path, overwrite=True)
