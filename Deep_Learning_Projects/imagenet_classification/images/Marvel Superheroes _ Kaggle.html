@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://www.kaggle.com/dannielr/marvel-superheroes -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="react-tooltip">.__react_component_tooltip{border-radius:3px;display:inline-block;font-size:13px;left:-999em;opacity:0;padding:8px 21px;position:fixed;pointer-events:none;transition:opacity 0.3s ease-out;top:-999em;visibility:hidden;z-index:999}.__react_component_tooltip.allow_hover,.__react_component_tooltip.allow_click{pointer-events:auto}.__react_component_tooltip:before,.__react_component_tooltip:after{content:"";width:0;height:0;position:absolute}.__react_component_tooltip.show{opacity:0.9;margin-top:0px;margin-left:0px;visibility:visible}.__react_component_tooltip.type-dark{color:#fff;background-color:#222}.__react_component_tooltip.type-dark.place-top:after{border-top-color:#222;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-dark.place-bottom:after{border-bottom-color:#222;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-dark.place-left:after{border-left-color:#222;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-dark.place-right:after{border-right-color:#222;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-dark.border{border:1px solid #fff}.__react_component_tooltip.type-dark.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-dark.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-dark.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-dark.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-success{color:#fff;background-color:#8DC572}.__react_component_tooltip.type-success.place-top:after{border-top-color:#8DC572;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-success.place-bottom:after{border-bottom-color:#8DC572;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-success.place-left:after{border-left-color:#8DC572;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-success.place-right:after{border-right-color:#8DC572;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-success.border{border:1px solid #fff}.__react_component_tooltip.type-success.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-success.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-success.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-success.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-warning{color:#fff;background-color:#F0AD4E}.__react_component_tooltip.type-warning.place-top:after{border-top-color:#F0AD4E;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-warning.place-bottom:after{border-bottom-color:#F0AD4E;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-warning.place-left:after{border-left-color:#F0AD4E;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-warning.place-right:after{border-right-color:#F0AD4E;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-warning.border{border:1px solid #fff}.__react_component_tooltip.type-warning.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-warning.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-warning.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-warning.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-error{color:#fff;background-color:#BE6464}.__react_component_tooltip.type-error.place-top:after{border-top-color:#BE6464;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-error.place-bottom:after{border-bottom-color:#BE6464;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-error.place-left:after{border-left-color:#BE6464;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-error.place-right:after{border-right-color:#BE6464;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-error.border{border:1px solid #fff}.__react_component_tooltip.type-error.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-error.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-error.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-error.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-info{color:#fff;background-color:#337AB7}.__react_component_tooltip.type-info.place-top:after{border-top-color:#337AB7;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-info.place-bottom:after{border-bottom-color:#337AB7;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-info.place-left:after{border-left-color:#337AB7;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-info.place-right:after{border-right-color:#337AB7;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-info.border{border:1px solid #fff}.__react_component_tooltip.type-info.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-info.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-info.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-info.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-light{color:#222;background-color:#fff}.__react_component_tooltip.type-light.place-top:after{border-top-color:#fff;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-light.place-bottom:after{border-bottom-color:#fff;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-light.place-left:after{border-left-color:#fff;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-light.place-right:after{border-right-color:#fff;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-light.border{border:1px solid #222}.__react_component_tooltip.type-light.border.place-top:before{border-top:8px solid #222}.__react_component_tooltip.type-light.border.place-bottom:before{border-bottom:8px solid #222}.__react_component_tooltip.type-light.border.place-left:before{border-left:8px solid #222}.__react_component_tooltip.type-light.border.place-right:before{border-right:8px solid #222}.__react_component_tooltip.place-top{margin-top:-10px}.__react_component_tooltip.place-top:before{border-left:10px solid transparent;border-right:10px solid transparent;bottom:-8px;left:50%;margin-left:-10px}.__react_component_tooltip.place-top:after{border-left:8px solid transparent;border-right:8px solid transparent;bottom:-6px;left:50%;margin-left:-8px}.__react_component_tooltip.place-bottom{margin-top:10px}.__react_component_tooltip.place-bottom:before{border-left:10px solid transparent;border-right:10px solid transparent;top:-8px;left:50%;margin-left:-10px}.__react_component_tooltip.place-bottom:after{border-left:8px solid transparent;border-right:8px solid transparent;top:-6px;left:50%;margin-left:-8px}.__react_component_tooltip.place-left{margin-left:-10px}.__react_component_tooltip.place-left:before{border-top:6px solid transparent;border-bottom:6px solid transparent;right:-8px;top:50%;margin-top:-5px}.__react_component_tooltip.place-left:after{border-top:5px solid transparent;border-bottom:5px solid transparent;right:-6px;top:50%;margin-top:-4px}.__react_component_tooltip.place-right{margin-left:10px}.__react_component_tooltip.place-right:before{border-top:6px solid transparent;border-bottom:6px solid transparent;left:-8px;top:50%;margin-top:-5px}.__react_component_tooltip.place-right:after{border-top:5px solid transparent;border-bottom:5px solid transparent;left:-6px;top:50%;margin-top:-4px}.__react_component_tooltip .multi-line{display:block;padding:2px 0px;text-align:center}</style>
+    <title>Marvel Superheroes | Kaggle</title>
+    
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Marvel superheroes stats and info">
+    <meta name="turbolinks-cache-control" content="no-cache">
+        <meta name="keywords" content="comics">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#008ABC">
+    <script type="text/javascript" async="" src="./Marvel Superheroes _ Kaggle_files/koj6gxx6"></script><script src="./Marvel Superheroes _ Kaggle_files/cb=gapi.loaded_0" nonce="" async=""></script><script nonce="" type="text/javascript">
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations()
+                .then(function(registrations) {
+                    for (let registration of registrations) {
+                        registration.unregister();
+                    }
+                })
+                .catch(function(err) {
+                    console.error("Service worker unregister failed: ", err);
+                });
+        }
+    </script>
+    <script nonce="" type="text/javascript">
+        window["pageRequestStartTime"] = 1592390952998;
+        window["pageRequestEndTime"] = 1592390953432;
+        window["initialPageLoadStartTime"] = new Date().getTime();
+    </script>
+    <style type="text/css">svg:not(:root).svg-inline--fa {
+  overflow: visible;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.225em;
+}
+.svg-inline--fa.fa-w-1 {
+  width: 0.0625em;
+}
+.svg-inline--fa.fa-w-2 {
+  width: 0.125em;
+}
+.svg-inline--fa.fa-w-3 {
+  width: 0.1875em;
+}
+.svg-inline--fa.fa-w-4 {
+  width: 0.25em;
+}
+.svg-inline--fa.fa-w-5 {
+  width: 0.3125em;
+}
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
+}
+.svg-inline--fa.fa-w-7 {
+  width: 0.4375em;
+}
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
+}
+.svg-inline--fa.fa-w-9 {
+  width: 0.5625em;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-11 {
+  width: 0.6875em;
+}
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
+}
+.svg-inline--fa.fa-w-13 {
+  width: 0.8125em;
+}
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-15 {
+  width: 0.9375em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-17 {
+  width: 1.0625em;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
+}
+.svg-inline--fa.fa-w-19 {
+  width: 1.1875em;
+}
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-border {
+  height: 1.5em;
+}
+.svg-inline--fa.fa-li {
+  width: 2em;
+}
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: #ff253a;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  height: 1.5em;
+  line-height: 1;
+  max-width: 5em;
+  min-width: 1.5em;
+  overflow: hidden;
+  padding: 0.25em;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: 0;
+  right: auto;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: 0.3em;
+}
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: 0.3em;
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+          animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse {
+  color: #fff;
+}</style><link rel="preconnect" href="https://www.google-analytics.com/" crossorigin="anonymous"><link rel="preconnect" href="https://stats.g.doubleclick.net/"><link rel="preconnect" href="https://js.intercomcdn.com/"><link rel="preconnect" href="https://storage.googleapis.com/"><link rel="preconnect" href="https://apis.google.com/"><link rel="preload" href="https://www.kaggle.com/static/assets/fontawesome-webfont.woff2" as="font" crossorigin="anonymous">
+    <link href="https://www.kaggle.com/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="manifest" href="https://www.kaggle.com/static/json/manifest.json" crossorigin="use-credentials">
+    <link href="./Marvel Superheroes _ Kaggle_files/css" rel="stylesheet" type="text/css">
+    <link href="./Marvel Superheroes _ Kaggle_files/icon" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./Marvel Superheroes _ Kaggle_files/vendor.css">
+        <link rel="stylesheet" type="text/css" href="./Marvel Superheroes _ Kaggle_files/app.css">
+    
+    
+ 
+        <script nonce="">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script><script data-dapp-detection="">
+(function() {
+  let alreadyInsertedMetaTag = false
+
+  function __insertDappDetected() {
+    if (!alreadyInsertedMetaTag) {
+      const meta = document.createElement('meta')
+      meta.name = 'dapp-detected'
+      document.head.appendChild(meta)
+      alreadyInsertedMetaTag = true
+    }
+  }
+
+  if (window.hasOwnProperty('web3')) {
+    // Note a closure can't be used for this var because some sites like
+    // www.wnyc.org do a second script execution via eval for some reason.
+    window.__disableDappDetectionInsertion = true
+    // Likely oldWeb3 is undefined and it has a property only because
+    // we defined it. Some sites like wnyc.org are evaling all scripts
+    // that exist again, so this is protection against multiple calls.
+    if (window.web3 === undefined) {
+      return
+    }
+    __insertDappDetected()
+  } else {
+    var oldWeb3 = window.web3
+    Object.defineProperty(window, 'web3', {
+      configurable: true,
+      set: function (val) {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        oldWeb3 = val
+      },
+      get: function () {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        return oldWeb3
+      }
+    })
+  }
+})()</script><style></style>
+    <script nonce="">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-12629138-1', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false
+        });
+    </script>
+    <script nonce="" async="" src="./Marvel Superheroes _ Kaggle_files/js"></script>
+
+<script nonce="">window.intercomSettings = {"app_id":"koj6gxx6","name":"Suraj Karki","email":"suraj.karki500@gmail.com","user_hash":"cd324cd3a678921b0972b56d3adcd4f90096216cdea412ede8e12a00a59b25ae","created_at":1547224094,"last_visit_date_at":1592390953,"status_id":2,"performance_tier":0,"user_name":"surajkarki","display_name":"Suraj Karki","is_admin":false,"experiment_group":0,"newsletter_subscriber":true,"competition_mailing_list_subscriber":true,"block_emails":false,"competitions_tier":0,"competitions_tier_attained_at":1547233407,"kernels_tier":0,"kernels_tier_attained_at":1547233407,"discussion_tier":0,"discussion_tier_attained_at":1547233407,"datasets_count":0,"host_page_visits":0,"in_class_competitions_hosted_count":0,"last_hour_searches_count":0,"api_has_token":false,"api_has_requests":false};</script>        <script nonce="">(function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', intercomSettings); } else { var d = document; var i = function () { i.c(arguments) }; i.q = []; i.c = function (args) { i.q.push(args) }; w.Intercom = i; function l() { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/koj6gxx6'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); } if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })()</script>
+    
+    
+        <meta property="og:url" content="https://kaggle.com/dannielr/marvel-superheroes">
+        <meta property="og:title" content="Marvel Superheroes">
+        <meta property="og:description" content="Marvel superheroes stats and info">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-card.jpg?t=2018-07-23-09-38-05">
+        <meta property="fb:app_id" content="2665027677054710">
+
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@kaggledatasets">
+    
+
+    
+    
+        <script nonce="" type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"Marvel Superheroes","description":"# Dataset\nThis dataset was created by Danniel R\n\n# Contents\nIt contains the following files:\n\n","url":"https://www.kaggle.com/dannielr/marvel-superheroes","sameAs":"","version":3,"keywords":["culture and arts, visual arts, comics and animation, comics"],"license":{"@type":"CreativeWork","name":"Unknown","url":""},"identifier":["38396"],"includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"Danniel R","url":"https://www.kaggle.com/dannielr","image":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com/dannielr/marvel-superheroes/download","contentSize":"20290510 bytes"}],"commentCount":0,"dateModified":"2018-07-29T07:50:32.103","discussionUrl":"https://www.kaggle.com/dannielr/marvel-superheroes/discussion","alternateName":"Marvel superheroes stats and info","isAccessibleForFree":true,"thumbnailUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-card.jpg?t=2018-07-23-09-38-05","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":0},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":2002},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":12933},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":45}]}</script>
+    
+
+    
+    
+    
+<script nonce="" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+
+    Kaggle.Current = {
+        userId: 2695299,
+        userProfileUrl: '/surajkarki',
+        userDisplayNameEscaped: 'Suraj Karki',
+        userThumbnailUrl: 'https://storage.googleapis.com/kaggle-avatars/thumbnails/2695299-gp.jpg',
+        userEmail: 'suraj.karki500@gmail.com',
+        userIsPhoneVerified: false,
+        userName: 'surajkarki',
+        tier: 'Novice',
+        antiForgeryToken: 'CfDJ8LdUzqlsSWBPr4Ce3rb9VL-to0xVmlqsh_SQTuH48cFtJLvQjs5iGoHJC_oM2NN7lwGII8GtRGNqPFu5ghtuR-eeJjOcMtia4LZR5NklmEemJDOI0HVdiN4h1s0yzAr3O1B2vCeG5e0FY5r2rcdxXs-Tu1DlF2g3eVHqpjxqnx8WKpr2tzhWRFGMIge1FSp1jg',
+        isAnonymous: false,
+        analyticsToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTIzOTE4NTMsIlVzZXJJZCI6MjY5NTI5OX0.C16tZ06ckYmHMKJyVDzwR08clOk-MG3bzV75kHJluDo',
+        analyticsTokenExpiry: 15,
+        
+        
+        
+        
+        
+        
+        mdeImageUploader: true,
+        
+        enableRapidash: true, 
+    }
+        Kaggle.Current.log = function(){};
+        Kaggle.Current.warn = function(){};
+
+    var decodeUserDisplayName = function () {
+        var escapedUserDisplayName = Kaggle.Current.userDisplayNameEscaped || "";
+        try {
+            var textVersion = new DOMParser().parseFromString(escapedUserDisplayName, "text/html").documentElement.textContent;
+            if (textVersion) {
+                return textVersion;
+            }
+        } catch(ex) {}
+        return escapedUserDisplayName;
+    }
+    Kaggle.Current.userDisplayName = decodeUserDisplayName();
+</script>
+
+    
+
+<script nonce="" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+    Kaggle.PageMessages = [];
+</script>
+
+        <script nonce="" type="text/javascript">
+/* <![CDATA[ */
+goog_snippet_vars = function() {
+    var w = window;
+    w.google_conversion_id = 955616553;
+    w.google_conversion_label = "QSjvCKDksHMQqZrWxwM";
+    w.google_conversion_value = 0.00;
+    w.google_conversion_currency = "USD";
+    w.google_remarketing_only = false;
+    w.google_conversion_language = "en";
+    w.google_conversion_format = "3";
+    w.google_conversion_color = "ffffff";
+}
+// DO NOT CHANGE THE CODE BELOW.
+goog_report_conversion = function(url) {
+    goog_snippet_vars();
+    window.google_conversion_format = "3";
+    var opt = new Object();
+    opt.onload_callback = function() {
+        if (typeof(url) != 'undefined') {
+            window.location = url;
+        }
+    }
+    var conv_handler = window['google_trackConversion'];
+    if (typeof(conv_handler) == 'function') {
+        conv_handler(opt);
+    }
+}
+/* ]]> */
+    </script>
+    <script nonce="" type="text/javascript" src="./Marvel Superheroes _ Kaggle_files/f.txt">
+    </script>
+
+
+
+        <script nonce="">window['useKaggleAnalytics'] = true;</script>
+
+    <script id="gapi-target" nonce="" src="./Marvel Superheroes _ Kaggle_files/api.js" defer="" async="" gapi_processed="true"></script>
+    <script nonce="" src="./Marvel Superheroes _ Kaggle_files/runtime.js" data-turbolinks-track="reload"></script>
+    <script nonce="" src="./Marvel Superheroes _ Kaggle_files/vendor.js" data-turbolinks-track="reload"></script>
+    <script nonce="" src="./Marvel Superheroes _ Kaggle_files/app.js" data-turbolinks-track="reload"></script>
+        <script nonce="" defer="" src="./Marvel Superheroes _ Kaggle_files/stackdriver-errors-concat.min.js"></script>
+        <script nonce="" type="text/javascript">
+            function shouldFilterStackdriverError(message) {
+                if (message &&
+                    /\[ResponseMiddlewares.enforceOk\] response was not ok \| (429|404)/.test(message)) {
+                    return true;
+                }
+                if (!window.navigator || !window.navigator.userAgent ||
+                    window.navigator.userAgent.toLowerCase().indexOf("bot") > -1) {
+                    return true;
+                }
+                return false;
+            }
+
+            window.addEventListener('DOMContentLoaded', function () {
+                var errorHandler = new StackdriverErrorReporter();
+                errorHandler.start({
+                    key: 'AIzaSyDANGXFHtSIVc51MIdGwg4mQFgm3oNrKoo',
+                    projectId: 'kaggle-161607',
+                    service: 'web-fe',
+                    version: 'ci',
+                    context: {
+                        user: '2695299',
+                    },
+                });
+                let sdErrorHandler = window.onerror;
+                window.onerror = function(message, source, lineno, colno, error) {
+                    if (error && shouldFilterStackdriverError(error.message)) {
+                        return true;
+                    }
+                    return sdErrorHandler(message, source, lineno, colno, error);
+                };
+                let sdUnhandledRejectionHandler = window.onunhandledrejection;
+                window.onunhandledrejection = function(e) {
+                    e.preventDefault();
+                    if (shouldFilterStackdriverError(e.reason)) {
+                        return true;
+                    }
+                    return sdUnhandledRejectionHandler(e);
+                };
+            });
+        </script>
+<style data-styled="active" data-styled-version="5.1.0"></style><script charset="utf-8" src="./Marvel Superheroes _ Kaggle_files/1.bb95c6195a7ccd1ce4cc.js"></script><script charset="utf-8" src="./Marvel Superheroes _ Kaggle_files/2.d8bf8a4c8f2bc937e507.js"></script><script charset="utf-8" src="./Marvel Superheroes _ Kaggle_files/3.23ce77ddae10530fa4ef.js"></script><script charset="utf-8" src="./Marvel Superheroes _ Kaggle_files/15.73e2c1933214ebd50946.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.react-json-view .copy-to-clipboard-container{vertical-align:top;display:none}.react-json-view .click-to-add,.react-json-view .click-to-edit,.react-json-view .click-to-remove{display:none}.react-json-view .object-content .variable-row:hover .click-to-edit,.react-json-view .object-content .variable-row:hover .click-to-remove,.react-json-view .object-key-val:hover>span>.object-meta-data>.click-to-add,.react-json-view .object-key-val:hover>span>.object-meta-data>.click-to-remove,.react-json-view .object-key-val:hover>span>.object-meta-data>.copy-to-clipboard-container,.react-json-view .variable-row:hover .copy-to-clipboard-container{display:inline-block}</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script type="text/javascript" charset="UTF-8" src="./Marvel Superheroes _ Kaggle_files/loader.js" nonce=""></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./Marvel Superheroes _ Kaggle_files/tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./Marvel Superheroes _ Kaggle_files/util.css"><link id="load-css-2" rel="stylesheet" type="text/css" href="./Marvel Superheroes _ Kaggle_files/controls.css"><script type="text/javascript" charset="UTF-8" src="./Marvel Superheroes _ Kaggle_files/jsapi_compiled_format_module.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="./Marvel Superheroes _ Kaggle_files/jsapi_compiled_default_module.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="./Marvel Superheroes _ Kaggle_files/jsapi_compiled_ui_module.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="./Marvel Superheroes _ Kaggle_files/jsapi_compiled_corechart_module.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="./Marvel Superheroes _ Kaggle_files/jsapi_compiled_controls_module.js" nonce=""></script></head>
+<body data-turbolinks="false"><div id="MathJax_Message" style="display: none;"></div>
+    <main>
+        
+
+
+
+
+
+
+<div id="site-container"><div style="--mdc-theme-on-primary:#fff; --mdc-theme-on-surface:rgba(0, 0, 0, 0.87); --mdc-theme-text-primary-on-background:rgba(0, 0, 0, 0.87); --mdc-theme-text-secondary-on-background:rgba(0, 0, 0, 0.54); --mdc-theme-text-hint-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-text-disabled-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-text-icon-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-primary:#20BEFF; --mdc-theme-error:#F58B8A; --mdc-theme-background:#F8F8F8; --mdc-theme-surface:#F8F8F8; --mdc-theme-primary-bg:#20BEFF; --mdc-theme-secondary-bg:#919294;"><div class="sc-pAwOa FToQS"><div class="sc-pIUfD gAiAth"><div class="sc-qPwwY aevsi"><div class="sc-qXTOB gHoikQ"><button aria-hidden="true" color="rgba(0,0,0,0.5)" sizevalue="24px" role="button" tabindex="0" data-mdc-ripple-is-unbounded="true" class="rmwc-icon google-material-icons sc-fznLPX cdkIzo mdc-ripple-upgraded--unbounded mdc-ripple-upgraded sc-fznLPX cdkIzo mdc-icon-button" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">menu</button></div><div class="sc-pAkoP dljKyZ"><a href="https://www.kaggle.com/"><img src="./Marvel Superheroes _ Kaggle_files/site-logo.png" class="sc-ptEpz elHUAl"></a></div></div></div><div class="sc-pQrUA keqDxd"><div class="sc-pYPmd hcaPMi"><div class="sc-pssnI fGcBXN"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl bSGqIJ sc-qPIWj hwcYNu">search</i><p class="sc-fzoyTs sc-fzoNJl sc-qXFOy gJDLfj">Search</p></div></div><div class="sc-psRme cJJQzT"><div class="NotificationContainer_NotificationContainerWrapper-sc-bb4fan jpwGqK"><span class="tooltip-container NotificationContainer_NotificationTooltipWrapper-sc-1jdjwer cuZzqU" data-tooltip="Notifications"><div class="NotificationIcon_NotificationIconWrapper-sc-3rbk7d OCzFg"><div class="NotificationIcon_NotificationIconIcon-sc-wpy2fb fHIkUa"><span name="bell" class="fa fa-bell"></span></div></div></span><div></div></div><div class="sc-qPjXN fHNEcZ"><span title="" class="rmwc-icon google-material-icons mdc-ripple-upgraded mdc-ripple-surface rmwc-avatar rmwc-avatar--large rmwc-avatar--interactive rmwc-avatar--has-image"><div class="rmwc-avatar__icon" style="background-image: url(&quot;https://storage.googleapis.com/kaggle-avatars/thumbnails/2695299-gp.jpg&quot;); background-size: cover;"></div><div class="rmwc-avatar__text"><div class="rmwc-avatar__text-inner"></div></div></span><div class="mdc-menu-surface--anchor"><div aria-hidden="true" class="mdc-menu sc-pkUyL eqsONw sc-qXgLg jfETuf mdc-menu-surface" style="transform-origin: center top; left: 0px; top: 0px; max-height: 591.5px;"><div role="menu" class="mdc-list mdc-menu__items mdc-list"><p class="sc-pzXPE hidHeg">Signed in as Suraj Karki</p><a href="https://www.kaggle.com/surajkarki" class="sc-pQQXS sc-pZopv bjKdkd"><div role="menuitem" tabindex="0" class="sc-pIvhh kDHKxy mdc-ripple-upgraded sc-pIvhh kDHKxy mdc-list-item">My Profile</div></a><a href="https://www.kaggle.com/surajkarki/account" class="sc-pQQXS sc-pZopv bjKdkd"><div role="menuitem" tabindex="0" class="sc-pIvhh kDHKxy mdc-ripple-upgraded sc-pIvhh kDHKxy mdc-list-item">My Account</div></a><a href="https://www.kaggle.com/account/logoff" class="sc-pQQXS sc-pZopv bjKdkd"><div role="menuitem" tabindex="0" class="sc-pIvhh kDHKxy mdc-ripple-upgraded sc-pIvhh kDHKxy mdc-list-item">Sign Out</div></a></div></div></div></div></div></div></div><div class="sc-qOvoE gLkQYJ"><div class="sc-pcZmk fLYRsF"><div class="sc-plVHf cerIbj"><div class="sc-pssnI fGcBXN"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl bSGqIJ sc-qPIWj hwcYNu">search</i><p class="sc-fzoyTs sc-fzoNJl sc-qXFOy gJDLfj">Search</p></div></div><ul class="sc-qYIQh gWukrV mdc-list"><a href="https://www.kaggle.com/" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="rgba(0,0,0,0.5)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl fJpgUt">explore</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">Home</p></li></a><a href="https://www.kaggle.com/competitions" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><img src="./Marvel Superheroes _ Kaggle_files/ic_comps_deselected.svg" class="sc-oVcyR byDmJV"><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">Compete</p></li></a><a href="https://www.kaggle.com/datasets" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="#20BEFF" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl grlgcL">table_chart</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi egFaXm">Data</p></li></a><a href="https://www.kaggle.com/notebooks" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="rgba(0,0,0,0.5)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl fJpgUt">code</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">Notebooks</p></li></a><a href="https://www.kaggle.com/discussion" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="rgba(0,0,0,0.5)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl fJpgUt">comment</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">Discuss</p></li></a><a href="https://www.kaggle.com/learn" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="rgba(0,0,0,0.5)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl fJpgUt">school</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">Courses</p></li></a><a class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="rgba(0,0,0,0.5)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl fJpgUt">expand_more</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">More</p></li></a></ul></div><div class="sc-puFxT ioRaEF"><div><div class="sc-pmigq eizptU"></div><span class="sc-fznzOf sc-fznMnq sc-pDboM eerRWB">Recently Viewed</span><div><a href="https://www.kaggle.com/dannielr/marvel-superheroes?rvi=1" title="Marvel Superheroes" class="sc-qcrOD lgHeMB"><li class="mdc-list-item sc-pLyGp hDVhrN" role="listitem"><div class="sc-oVoYc kilUQw"><img src="./Marvel Superheroes _ Kaggle_files/dataset-thumbnail.jpg" class="sc-pdMpF gOkDON"></div><p class="sc-fzoyTs sc-fzoNJl sc-pTUxa lnpTok">Marvel Superheroes</p></li></a><a href="https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge?rvi=1" title="Challenges in Representation Learning: Facial Expression Recognition Challenge" class="sc-qcrOD lgHeMB"><li class="mdc-list-item sc-pLyGp hDVhrN" role="listitem"><div class="sc-oVoYc kilUQw"><img src="./Marvel Superheroes _ Kaggle_files/thumb76_76.png" class="sc-pdMpF gOkDON"></div><p class="sc-fzoyTs sc-fzoNJl sc-pTUxa lnpTok">Challenges in Representation Learning: Facial Expression Recognition Challenge</p></li></a><a href="https://www.kaggle.com/c/emotion-detection-from-facial-expressions?rvi=1" title="Emotion Detection From Facial Expressions" class="sc-qcrOD lgHeMB"><li class="mdc-list-item sc-pLyGp hDVhrN" role="listitem"><div class="sc-oVoYc kilUQw"><img src="./Marvel Superheroes _ Kaggle_files/competition-noimage-thumb.png" class="sc-pdMpF gOkDON"></div><p class="sc-fzoyTs sc-fzoNJl sc-pTUxa lnpTok">Emotion Detection From Facial Expressions</p></li></a><a href="https://www.kaggle.com/gpiosenka/autistic-children-data-set-traintestvalidate?rvi=1" title="Autistic Children Data Set " class="sc-qcrOD lgHeMB"><li class="mdc-list-item sc-pLyGp hDVhrN" role="listitem"><div class="sc-oVoYc kilUQw"><img src="./Marvel Superheroes _ Kaggle_files/dataset-thumbnail(1).jpg" class="sc-pdMpF gOkDON"></div><p class="sc-fzoyTs sc-fzoNJl sc-pTUxa lnpTok">Autistic Children Data Set </p></li></a><a href="https://www.kaggle.com/c/severstal-steel-defect-detection/discussion/107246?rvi=1" title="(256, 1600, 3) is not (224, 224, 3), will the learned features of `resnet50` still be applicable? " class="sc-qcrOD lgHeMB"><li class="mdc-list-item sc-pLyGp hDVhrN" role="listitem"><div class="sc-oVoYc kilUQw"><img src="./Marvel Superheroes _ Kaggle_files/2859001-kg.jpg" class="sc-pdMpF gOkDON"></div><p class="sc-fzoyTs sc-fzoNJl sc-pTUxa lnpTok">(256, 1600, 3) is not (224, 224, 3), will the learned features of `resnet50` still be applicable? </p></li></a></div></div></div></div><div class="sc-qWSGh gVFECi"><div class="sc-pAMRk khcjsd"><div class="sc-qPwwY aevsi"><div class="sc-qXTOB gHoikQ"><button aria-hidden="true" color="rgba(0,0,0,0.5)" sizevalue="24px" role="button" tabindex="0" data-mdc-ripple-is-unbounded="true" class="rmwc-icon google-material-icons sc-fznLPX cdkIzo mdc-ripple-upgraded--unbounded mdc-ripple-upgraded sc-fznLPX cdkIzo mdc-icon-button" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:NaN; --mdc-ripple-left:0px; --mdc-ripple-top:0px;">menu</button></div><div class="sc-pAkoP dljKyZ"><a href="https://www.kaggle.com/"><img src="./Marvel Superheroes _ Kaggle_files/site-logo.png" class="sc-ptEpz elHUAl"></a></div></div></div><div class="sc-pcZmk fLYRsF"><div class="sc-plVHf cerIbj"><div class="sc-pssnI fGcBXN"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl bSGqIJ sc-qPIWj hwcYNu">search</i><p class="sc-fzoyTs sc-fzoNJl sc-qXFOy gJDLfj">Search</p></div></div><ul class="sc-qYIQh gWukrV mdc-list"><a href="https://www.kaggle.com/" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="rgba(0,0,0,0.5)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl fJpgUt">explore</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">Home</p></li></a><a href="https://www.kaggle.com/competitions" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><img src="./Marvel Superheroes _ Kaggle_files/ic_comps_deselected.svg" class="sc-oVcyR byDmJV"><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">Compete</p></li></a><a href="https://www.kaggle.com/datasets" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="#20BEFF" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl grlgcL">table_chart</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi egFaXm">Data</p></li></a><a href="https://www.kaggle.com/notebooks" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="rgba(0,0,0,0.5)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl fJpgUt">code</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">Notebooks</p></li></a><a href="https://www.kaggle.com/discussion" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="rgba(0,0,0,0.5)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl fJpgUt">comment</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">Discuss</p></li></a><a href="https://www.kaggle.com/learn" class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="rgba(0,0,0,0.5)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl fJpgUt">school</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">Courses</p></li></a><a class="sc-pKLCU LdczL"><li class="mdc-list-item sc-pTHXP jYGOEc" role="listitem" tabindex="-1"><i color="rgba(0,0,0,0.5)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl fJpgUt">expand_more</i><p class="sc-fzqARJ sc-fzqNqU sc-qbELi cDmikh">More</p></li></a></ul></div><div><div class="sc-pmigq eizptU"></div><span class="sc-fznzOf sc-fznMnq sc-pDboM eerRWB">Recently Viewed</span><div><a href="https://www.kaggle.com/dannielr/marvel-superheroes?rvi=1" title="Marvel Superheroes" class="sc-qcrOD lgHeMB"><li class="mdc-list-item sc-pLyGp hDVhrN" role="listitem"><div class="sc-oVoYc kilUQw"><img src="./Marvel Superheroes _ Kaggle_files/dataset-thumbnail.jpg" class="sc-pdMpF gOkDON"></div><p class="sc-fzoyTs sc-fzoNJl sc-pTUxa lnpTok">Marvel Superheroes</p></li></a><a href="https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge?rvi=1" title="Challenges in Representation Learning: Facial Expression Recognition Challenge" class="sc-qcrOD lgHeMB"><li class="mdc-list-item sc-pLyGp hDVhrN" role="listitem"><div class="sc-oVoYc kilUQw"><img src="./Marvel Superheroes _ Kaggle_files/thumb76_76.png" class="sc-pdMpF gOkDON"></div><p class="sc-fzoyTs sc-fzoNJl sc-pTUxa lnpTok">Challenges in Representation Learning: Facial Expression Recognition Challenge</p></li></a><a href="https://www.kaggle.com/c/emotion-detection-from-facial-expressions?rvi=1" title="Emotion Detection From Facial Expressions" class="sc-qcrOD lgHeMB"><li class="mdc-list-item sc-pLyGp hDVhrN" role="listitem"><div class="sc-oVoYc kilUQw"><img src="./Marvel Superheroes _ Kaggle_files/competition-noimage-thumb.png" class="sc-pdMpF gOkDON"></div><p class="sc-fzoyTs sc-fzoNJl sc-pTUxa lnpTok">Emotion Detection From Facial Expressions</p></li></a><a href="https://www.kaggle.com/gpiosenka/autistic-children-data-set-traintestvalidate?rvi=1" title="Autistic Children Data Set " class="sc-qcrOD lgHeMB"><li class="mdc-list-item sc-pLyGp hDVhrN" role="listitem"><div class="sc-oVoYc kilUQw"><img src="./Marvel Superheroes _ Kaggle_files/dataset-thumbnail(1).jpg" class="sc-pdMpF gOkDON"></div><p class="sc-fzoyTs sc-fzoNJl sc-pTUxa lnpTok">Autistic Children Data Set </p></li></a><a href="https://www.kaggle.com/c/severstal-steel-defect-detection/discussion/107246?rvi=1" title="(256, 1600, 3) is not (224, 224, 3), will the learned features of `resnet50` still be applicable? " class="sc-qcrOD lgHeMB"><li class="mdc-list-item sc-pLyGp hDVhrN" role="listitem"><div class="sc-oVoYc kilUQw"><img src="./Marvel Superheroes _ Kaggle_files/2859001-kg.jpg" class="sc-pdMpF gOkDON"></div><p class="sc-fzoyTs sc-fzoNJl sc-pTUxa lnpTok">(256, 1600, 3) is not (224, 224, 3), will the learned features of `resnet50` still be applicable? </p></li></a></div></div></div><div data-testid="searchContainer" class="sc-pzLqt dmTjph"><div class="sc-qZtVr daJtxz"><div class="sc-pRgDJ fdbkSA"><div class="sc-prrfo elwNsP"><button aria-hidden="true" color="#20BEFF" sizevalue="24px" role="button" tabindex="0" data-mdc-ripple-is-unbounded="true" class="rmwc-icon google-material-icons sc-fznLPX iYcOJi sc-pZdvY bLynKO mdc-ripple-upgraded--unbounded mdc-ripple-upgraded sc-fznLPX iYcOJi sc-pZdvY bLynKO mdc-icon-button" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:NaN; --mdc-ripple-left:0px; --mdc-ripple-top:0px;">arrow_back</button><form data-testid="searchInputBarFormElement" class="sc-pbvYO hMYTdE"><input data-testid="searchInputBarInputElement" class="sc-pjumZ iocaEO searchTarget" type="text" size="1" value=""></form></div><div class="sc-qQKeD bSwWwA"><button aria-hidden="true" color="#20BEFF" sizevalue="24px" role="button" tabindex="0" data-mdc-ripple-is-unbounded="true" class="rmwc-icon google-material-icons sc-fznLPX iYcOJi sc-pZdvY sc-oTzgz iCyisc mdc-ripple-upgraded--unbounded mdc-ripple-upgraded sc-fznLPX iYcOJi sc-pZdvY sc-oTzgz iCyisc mdc-icon-button" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:NaN; --mdc-ripple-left:0px; --mdc-ripple-top:0px;">search</button><button aria-hidden="true" color="#20BEFF" sizevalue="24px" role="button" tabindex="0" data-mdc-ripple-is-unbounded="true" class="rmwc-icon google-material-icons sc-fznLPX iYcOJi sc-pZdvY bLynKO mdc-ripple-upgraded--unbounded mdc-ripple-upgraded sc-fznLPX iYcOJi sc-pZdvY bLynKO mdc-icon-button" style="--mdc-ripple-fg-size:0px; --mdc-ripple-fg-scale:NaN; --mdc-ripple-left:0px; --mdc-ripple-top:0px;">close</button></div></div></div><div class="sc-pHIdM hETnye"><div class="sc-pbYdQ fyWdiE"><div data-testid="searchInitialPage" class="sc-pkfPC iDckyw"><div class="sc-pRFHb kfZOQo"><li class="mdc-list-item sc-pZCuu htgBjT searchTarget" role="listitem"><div class="sc-oTaid fpeoAN"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl bSGqIJ sc-paWVw jShkAg">history</i></div><div class="sc-qQlgh gHDXpR"><h6 class="sc-fznJRM sc-fznWqX sc-prQdK beVcMP">224 x 224 images</h6><div class="sc-qQxFs jdLQbH"></div></div></li></div><div class="sc-pRFHb kfZOQo"><li class="mdc-list-item sc-pZCuu htgBjT searchTarget" role="listitem"><div class="sc-oTaid fpeoAN"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl bSGqIJ sc-paWVw jShkAg">history</i></div><div class="sc-qQlgh gHDXpR"><h6 class="sc-fznJRM sc-fznWqX sc-prQdK beVcMP">rock paper scissors</h6><div class="sc-qQxFs jdLQbH"></div></div></li></div><div class="sc-pRFHb kfZOQo"><li class="mdc-list-item sc-pZCuu htgBjT searchTarget" role="listitem"><div class="sc-oTaid fpeoAN"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl bSGqIJ sc-paWVw jShkAg">history</i></div><div class="sc-qQlgh gHDXpR"><h6 class="sc-fznJRM sc-fznWqX sc-prQdK beVcMP">rock sc</h6><div class="sc-qQxFs jdLQbH"></div></div></li></div><div class="sc-pBlxj gYSgcm"><p class="sc-fzoyTs sc-fzoNJl sc-psDhf hJJAwm">Trending Searches</p><div class="sc-pRFHb kfZOQo"><li class="mdc-list-item sc-pZCuu htgBjT searchTarget" role="listitem"><div class="sc-oTaid fpeoAN"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl bSGqIJ sc-paWVw jShkAg">trending_up</i></div><div class="sc-qQlgh gHDXpR"><h6 class="sc-fznJRM sc-fznWqX sc-prQdK beVcMP">twitter</h6></div></li></div><div class="sc-pRFHb kfZOQo"><li class="mdc-list-item sc-pZCuu htgBjT searchTarget" role="listitem"><div class="sc-oTaid fpeoAN"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl bSGqIJ sc-paWVw jShkAg">trending_up</i></div><div class="sc-qQlgh gHDXpR"><h6 class="sc-fznJRM sc-fznWqX sc-prQdK beVcMP">machine learning</h6></div></li></div><div class="sc-pRFHb kfZOQo"><li class="mdc-list-item sc-pZCuu htgBjT searchTarget" role="listitem"><div class="sc-oTaid fpeoAN"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl bSGqIJ sc-paWVw jShkAg">trending_up</i></div><div class="sc-qQlgh gHDXpR"><h6 class="sc-fznJRM sc-fznWqX sc-prQdK beVcMP">heart disease</h6></div></li></div></div><div class="sc-pBlxj gYSgcm"><p class="sc-fzoyTs sc-fzoNJl sc-psDhf hJJAwm">Popular Tags</p><div class="sc-pJipy dptwLu"><div class="sc-pJwpB cGhijZ mdc-chip-set"><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">gpu</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">1402142</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">starter code</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">52271</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">tpu</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">38311</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">beginner</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">17876</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">data visualization</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">11812</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">business</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">10017</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">deep learning</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">8515</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">eda</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">7304</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">utility script</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">6779</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">computing</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">6422</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">classification</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">6391</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">tutorial</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">5695</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">arts and entertainment</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">5541</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">natural and physical sciences</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">5145</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">statistics</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">4656</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">computer science</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">4345</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">feature engineering</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">3633</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">data cleaning</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">3366</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">reference</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">3150</span></div></div></button><button tabindex="0" customsize="medium" class="sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-upgraded sc-fzoOEf gNwIFx sc-pbJYR gsdIuB mdc-ripple-surface mdc-chip"><div class="mdc-chip__text"><div class="sc-pRSgm kKcmPp"><p class="sc-fzoyTs sc-fzoNJl sc-qapxP dyYQfM">internet</p><span class="sc-fznzOf sc-fznMnq sc-oTmHo gbiyiJ">3066</span></div></div></button></div></div></div></div></div></div></div><div id="site-content" class="sc-pIITJ gcyuCF"><div class="sc-pRFZy iIPyzR"></div><div class="Dataset_Wrapper-sc-isllmh bBkMGo"><div class="dataset-header-v2__container"><div class="pageheader"><div class="pageheader__container dataset-header-v2"><div id="dataset-header" class="dataset-header-v2__top"><div class="dataset-header-v2__top-image-container"><img src="./Marvel Superheroes _ Kaggle_files/dataset-cover.jpg" class="Header_CoverImg-sc-1431b7d ibFJYv"></div><div class="pageheader__top--safe" id="pageheader__top--safe--datasets"><div class="Header_UpvoteContainer-sc-p1gj85 cuqvHA"><span class="DatasetVoteButton_VoteButtonWrapper-sc-vvhrsz kMHeoG"><div class="vote-button__container "><div class="vote-button vote-button--compact vote-button--enabled"><div class="vote-button__button vote-button__button--up vb-upvote"><span class="fa fa-angle-up"></span></div><div class="vote-button__button vote-button__button--up vote-button__vote-count-container"><span class="vote-button__vote-count">45</span></div><div class="vote-button__button-placeholder"></div></div></div></span></div><div class="dataset-header-v2__classification"><p class="dataset-header-v2__classification-text"><span class="dataset-header-v2__classification-classification"><span class="fa-stack dataset-header-v2__classification-text-icon"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-cube fa-stack-1x"></i></span>&nbsp;  Dataset</span></p></div><div class="dataset-header-v2__info"><h1 class="dataset-header-v2__title">Marvel Superheroes</h1><h2 class="dataset-header-v2__subtitle">Marvel superheroes stats and info</h2></div><div class="dataset-header-v2__details"><div class="dataset-header-v2__collaborators-wrapper"><a href="https://www.kaggle.com/dannielr" class="dataset-header-v2__owner-name"><img class="dataset-header-v2__owner-thumbnail" src="./Marvel Superheroes _ Kaggle_files/default-thumb.png">Danniel R</a></div><time datetime="2018-07-29T07:50:32.103Z" title="2018-07-29T07:50:32.103Z"><span><span class="dataset-header-v2__meta-bullet">&nbsp;• &nbsp;</span><span class="Header_ClickableSpan-sc-1zw15p cAnbzB">updated <span title="Sun Jul 29 2018 13:35:32 GMT+0545 (Nepal Time)">2 years ago</span> (Version 3)</span></span></time></div></div></div><div class="sc-pjwqg jhviid" style="height: 47px; width: 999px;"><div offset="64" class="sc-prsnJ iOBldH"></div><div class="sc-qQIWi kYIkXe" style="top: 64px; height: 47px; width: 999px; position: fixed; z-index: 999;"><div class="pageheader__bottom pageheader__bottom"><div class="OverflowX_OverflowXWrapper-sc-jgkcy4 ghIHlL"><div class="OverflowX_OverflowXBody-sc-1whfcnd bpBCZF"><nav class="pageheader__nav pageheader__nav--dataset "><div class="pageheader__nav-wrapper"><a href="https://www.kaggle.com/dannielr/marvel-superheroes" title="Data" class="pageheader__left-links pageheader__left-links--with-onclick pageheader__left-links--selected" id="pageheader-nav-item--data"><span><span>Data</span></span></a><a href="https://www.kaggle.com/dannielr/marvel-superheroes/tasks" title="Tasks" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--tasks"><span><span>Tasks</span></span></a><a href="https://www.kaggle.com/dannielr/marvel-superheroes/kernels" title="Kernels" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--kernels"><span><span>Kernels</span><span class="pageheader__link-count">(<span>17</span>)</span></span></a><a href="https://www.kaggle.com/dannielr/marvel-superheroes/discussion" title="Discussion" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--discussion"><span><span>Discussion</span></span></a><a href="https://www.kaggle.com/dannielr/marvel-superheroes/activity" title="Activity" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--activity"><span><span>Activity</span></span></a><a href="https://www.kaggle.com/dannielr/marvel-superheroes/metadata" title="Metadata" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--metadata"><span><span>Metadata</span></span></a><div class="pageheader__right-links-wrapper"></div></div></nav></div></div><div class="Header_CtaWrapper-sc-1xx24oz kDVzvE"><a href="https://www.kaggle.com/dannielr/marvel-superheroes/download" class="button__anchor-wrapper" data-disable-rapidash="true"><div class="button Header_CtaDownload-sc-1s3hal9 jsSxQI"><span>Download (19 MB)</span></div></a><a class="button__anchor-wrapper" data-disable-rapidash="false"><div class="button Header_CtaButton-sc-wxqzlm gmRoBu"><span>New Notebook</span></div></a><div class="Header_DatasetDropdownWrapper-sc-tro94y fLrCTU"><div class="sc-qQjSQ sc-pJvck jQCsMK"><div class="sc-prRrb jSpjML"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg></div></div></div></div></div><div></div><div class="pageheader__transition"></div></div></div><div><div class="upvote-suggestion upvote-suggestion__dataset-download"><div class="upvote-suggestion__text"><div class="upvote-suggestion__main-text">Your Dataset download has started.</div><div class="upvote-suggestion__sub-text">Show your appreciation with an upvote</div></div><div class="upvote-suggestion__button"><div class="vote-button__container "><div class="vote-button vote-button--enabled"><div class="vote-button__button vote-button__button--up vb-upvote"><span class="fa fa-caret-up"></span></div><div class="vote-button__button vote-button__button--up vote-button__vote-count-container"><span class="vote-button__vote-count">45</span></div><div class="vote-button__button-placeholder"></div></div></div></div><div class="upvote-suggestion__voters"><div class="upvote-suggestion__voter upvote-suggestion__voter-top"><span class="tooltip-container" data-tooltip="L Lathrop" data-tooltip-size="small"><a href="https://www.kaggle.com/llathrop" class="upvote-suggestion__voter-link"><img src="https://storage.googleapis.com/kaggle-avatars/thumbnails/1865806-kg.jpg" alt="llathrop" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-top"><span class="tooltip-container" data-tooltip="Jacob Miller" data-tooltip-size="small"><a href="https://www.kaggle.com/jakemiller13" class="upvote-suggestion__voter-link"><img src="./Marvel Superheroes _ Kaggle_files/default-thumb.png" alt="jakemiller13" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-top"><span class="tooltip-container" data-tooltip="ozgurdogan" data-tooltip-size="small"><a href="https://www.kaggle.com/ozgurdogan646" class="upvote-suggestion__voter-link"><img src="https://storage.googleapis.com/kaggle-avatars/thumbnails/2836169-kg.PNG" alt="ozgurdogan646" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-more"><span class="tooltip-container" data-tooltip="Darius" data-tooltip-size="small"><a href="https://www.kaggle.com/dariusiv" class="upvote-suggestion__voter-link"><img src="./Marvel Superheroes _ Kaggle_files/default-thumb.png" alt="dariusiv" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-more"><span class="tooltip-container" data-tooltip="CristinaMarsh" data-tooltip-size="small"><a href="https://www.kaggle.com/cristinamarsh" class="upvote-suggestion__voter-link"><img src="https://storage.googleapis.com/kaggle-avatars/thumbnails/2545303-kg.jpeg" alt="cristinamarsh" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-more"><span class="tooltip-container" data-tooltip="James Wignall" data-tooltip-size="small"><a href="https://www.kaggle.com/jameswignall" class="upvote-suggestion__voter-link"><img src="https://storage.googleapis.com/kaggle-avatars/thumbnails/4919722-gr.jpg" alt="jameswignall" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-more"><span class="tooltip-container" data-tooltip="NIKHIL TAMTA" data-tooltip-size="small"><a href="https://www.kaggle.com/nikhiltamta" class="upvote-suggestion__voter-link"><img src="./Marvel Superheroes _ Kaggle_files/default-thumb.png" alt="nikhiltamta" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-more"><span class="tooltip-container" data-tooltip="Álvaro H.G" data-tooltip-size="small"><a href="https://www.kaggle.com/lvarohg" class="upvote-suggestion__voter-link"><img src="https://storage.googleapis.com/kaggle-avatars/thumbnails/4740889-gr.jpg" alt="lvarohg" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-more"><span class="tooltip-container" data-tooltip="Ken Popkin" data-tooltip-size="small"><a href="https://www.kaggle.com/krpopkin" class="upvote-suggestion__voter-link"><img src="./Marvel Superheroes _ Kaggle_files/default-thumb.png" alt="krpopkin" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-more"><span class="tooltip-container" data-tooltip="BrianRoller" data-tooltip-size="small"><a href="https://www.kaggle.com/broller" class="upvote-suggestion__voter-link"><img src="https://storage.googleapis.com/kaggle-avatars/thumbnails/1357690-gr.jpg" alt="broller" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-other"><span class="tooltip-container" data-tooltip="Jacob Guymon" data-tooltip-size="small"><a href="https://www.kaggle.com/jguymon" class="upvote-suggestion__voter-link"><img src="https://storage.googleapis.com/kaggle-avatars/thumbnails/2210403-gp.jpg" alt="jguymon" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-other"><span class="tooltip-container" data-tooltip="Ak camera" data-tooltip-size="small"><a href="https://www.kaggle.com/akcamera" class="upvote-suggestion__voter-link"><img src="./Marvel Superheroes _ Kaggle_files/default-thumb.png" alt="akcamera" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-other"><span class="tooltip-container" data-tooltip="D&#39;Andrea" data-tooltip-size="small"><a href="https://www.kaggle.com/jlrdandrea" class="upvote-suggestion__voter-link"><img src="https://storage.googleapis.com/kaggle-avatars/thumbnails/641239-kg.JPG" alt="jlrdandrea" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-other"><span class="tooltip-container" data-tooltip="Mohhinder" data-tooltip-size="small"><a href="https://www.kaggle.com/mohhinder" class="upvote-suggestion__voter-link"><img src="./Marvel Superheroes _ Kaggle_files/default-thumb.png" alt="mohhinder" class="upvote-suggestion__voter-img"></a></span></div><div class="upvote-suggestion__voter upvote-suggestion__voter-other"><span class="tooltip-container" data-tooltip="BenJohnston" data-tooltip-size="small"><a href="https://www.kaggle.com/benjohnston0" class="upvote-suggestion__voter-link"><img src="https://storage.googleapis.com/kaggle-avatars/thumbnails/334344-gr.jpg" alt="benjohnston0" class="upvote-suggestion__voter-img"></a></span></div></div></div></div></div></div></div><div class="Home_Wrapper-sc-1lm6bf2 hiZkTI"><div class="Home_ComponentWrapper-sc-7qy803 jYMWzP"><div class="content-box content-box--no-title"><div class="content-box__content-section content-box__content-section--no-title"><div class="content-box__simple-content-box"><div class="content-box__simple-content"><div class="QuickInfo_Wrapper-sc-zf34wg bvDqSX"><div class="sc-pjVMd izoSqY" data-test="usability-wrapper"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="toolbox" class="svg-inline--fa fa-toolbox fa-w-16 sc-pZEQg BOXnk fa-fw" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-test="icon"><path fill="currentColor" d="M502.63 214.63l-45.25-45.25c-6-6-14.14-9.37-22.63-9.37H384V80c0-26.51-21.49-48-48-48H176c-26.51 0-48 21.49-48 48v80H77.25c-8.49 0-16.62 3.37-22.63 9.37L9.37 214.63c-6 6-9.37 14.14-9.37 22.63V320h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-82.75c0-8.48-3.37-16.62-9.37-22.62zM320 160H192V96h128v64zm64 208c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H192v16c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H0v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96H384v16z"></path></svg><div data-test="text" class="sc-Axmtr sc-fzoiQi sc-pbaWO fNMpWr">Usability</div><p data-test="rating" class="sc-fzoyTs sc-fzoNJl sc-oTejv eZHwqp">4.1</p></div><div class="QuickInfo_Tags-sc-b0c3af cmpqvM"><div class="QuickInfo_InfoTitle-sc-4kjp6o eifNjV"><span name="tag" class="QuickInfo_StyledIcon-sc-1lv8yd dYFgJS fa-fw fa fa-tag"></span><div class="QuickInfo_Text-sc-8bgvbu QuickInfo_BoldText-sc-1mcdd3l xdgId">Tags</div></div><div><div class="sc-qZtCU gYnjXV" data-tip="true" data-for="tooltip_components_0" currentitem="false"><a href="https://www.kaggle.com/tags/comics" rel="noopener" class="SimpleTag_Tag-sc-1m0qa3y fqYwYp">comics</a><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_0" data-id="tooltip"><div class="sc-pzMyG ejxVHF"><div class="SimpleTag_CategoryTooltip-sc-193xph bHcLXK"><p class="SimpleTag_CategoryTooltipText-sc-1yo5c7k eQBsol">comics<span class="SimpleTag_CategoryTooltipCount-sc-2781ml jTvYpX">x 169</span></p><p>culture and arts &gt; visual arts &gt; comics and animation &gt; comics</p></div></div></div></div> </div></div></div></div></div></div></div></div><div class="Home_ComponentWrapper-sc-7qy803 jYMWzP"></div><div class="Home_ComponentWrapper-sc-7qy803 jYMWzP"><div aria-live="assertive" aria-atomic="true" aria-hidden="true" class="sc-qarTB kmrjZf mdc-snackbar mdc-snackbar--leading"><div class="mdc-snackbar__surface"><div role="status" aria-live="polite" class="mdc-snackbar__label"><div style="display: none;"></div></div><div class="mdc-snackbar__actions"></div></div></div><div class="sc-kIybTg hZDwON"><div class="sc-kNAbXx imgDCi"><div class="sc-jWJuNN brptim"><div class="sc-kbKqNe bGJFWP"><div class="sc-jxsHlP fkiIIf"><div class="sc-jCLxrW gCbcvA"><h6 class="sc-fznJRM sc-fznWqX sc-jIdpwp inXXyT">Data Explorer</h6><div class="sc-Axmtr sc-fzoiQi sc-jNwfCw hGRKNP">19.35 MB</div></div><ul class="sc-kIpgsX dUlnkZ"><ul class="sc-jRHuJw fkjoFu"><div role="button" class="sc-oTqIG sc-jRyzjn gakDFM"><div class="sc-pkilo kRyRfG"></div><div class="sc-psFCR cdcGCH"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">calendar_view_week</i></div><div class="sc-qZtCU gYnjXV sc-pBqZt sc-jWRppu kwOQPU" data-tip="true" data-for="tooltip_components_1" currentitem="false"><p class="sc-fzoyTs sc-fzoNJl sc-qYSBj bOCZEO">characters.csv</p><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_1" data-id="tooltip"><div class="sc-pzMyG ejxVHF">characters.csv</div></div></div></div></ul><ul class="sc-jRHuJw fkjoFu"><div role="button" class="sc-oTqIG sc-jRyzjn etNkdD"><div class="sc-pkilo eJbMqu"></div><div class="sc-psFCR iVzmtv"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">calendar_view_week</i></div><div class="sc-qZtCU gYnjXV sc-pBqZt sc-jWRppu kwOQPU" data-tip="true" data-for="tooltip_components_2" currentitem="false"><p class="sc-fzoyTs sc-fzoNJl sc-qYSBj AgQUy">charactersToComics.csv</p><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_2" data-id="tooltip"><div class="sc-pzMyG ejxVHF">charactersToComics.csv</div></div></div></div></ul><ul class="sc-jRHuJw fkjoFu"><div role="button" class="sc-oTqIG sc-jRyzjn etNkdD"><div class="sc-pkilo eJbMqu"></div><div class="sc-psFCR iVzmtv"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">calendar_view_week</i></div><div class="sc-qZtCU gYnjXV sc-pBqZt sc-jWRppu kwOQPU" data-tip="true" data-for="tooltip_components_3" currentitem="false"><p class="sc-fzoyTs sc-fzoNJl sc-qYSBj AgQUy">charcters_stats.csv</p><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_3" data-id="tooltip"><div class="sc-pzMyG ejxVHF">charcters_stats.csv</div></div></div></div></ul><ul class="sc-jRHuJw fkjoFu"><div role="button" class="sc-oTqIG sc-jRyzjn etNkdD"><div class="sc-pkilo eJbMqu"></div><div class="sc-psFCR iVzmtv"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">calendar_view_week</i></div><div class="sc-qZtCU gYnjXV sc-pBqZt sc-jWRppu kwOQPU" data-tip="true" data-for="tooltip_components_4" currentitem="false"><p class="sc-fzoyTs sc-fzoNJl sc-qYSBj AgQUy">comics.csv</p><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_4" data-id="tooltip"><div class="sc-pzMyG ejxVHF">comics.csv</div></div></div></div></ul><ul class="sc-jRHuJw fkjoFu"><div role="button" class="sc-oTqIG sc-jRyzjn etNkdD"><div class="sc-pkilo eJbMqu"></div><div class="sc-psFCR iVzmtv"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">calendar_view_week</i></div><div class="sc-qZtCU gYnjXV sc-pBqZt sc-jWRppu kwOQPU" data-tip="true" data-for="tooltip_components_5" currentitem="false"><p class="sc-fzoyTs sc-fzoNJl sc-qYSBj AgQUy">marvel_characters_info.csv</p><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_5" data-id="tooltip"><div class="sc-pzMyG ejxVHF">marvel_characters_info.csv</div></div></div></div></ul><ul class="sc-jRHuJw fkjoFu"><div role="button" class="sc-oTqIG sc-jRyzjn etNkdD"><div class="sc-pkilo eJbMqu"></div><div class="sc-psFCR iVzmtv"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">calendar_view_week</i></div><div class="sc-qZtCU gYnjXV sc-pBqZt sc-jWRppu kwOQPU" data-tip="true" data-for="tooltip_components_6" currentitem="false"><p class="sc-fzoyTs sc-fzoNJl sc-qYSBj AgQUy">marvel_dc_characters.csv</p><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_6" data-id="tooltip"><div class="sc-pzMyG ejxVHF">marvel_dc_characters.csv</div></div></div></div></ul><ul class="sc-jRHuJw fkjoFu"><div role="button" class="sc-oTqIG sc-jRyzjn etNkdD"><div class="sc-pkilo eJbMqu"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">arrow_right</i></div><div class="sc-psFCR iVzmtv"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">calendar_view_week</i></div><div class="sc-qZtCU gYnjXV sc-pBqZt sc-jWRppu kwOQPU" data-tip="true" data-for="tooltip_components_7" currentitem="false"><p class="sc-fzoyTs sc-fzoNJl sc-qYSBj AgQUy">marvel_dc_characters.xlsx</p><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_7" data-id="tooltip"><div class="sc-pzMyG ejxVHF">marvel_dc_characters.xlsx</div></div></div></div></ul><ul class="sc-jRHuJw fkjoFu"><div role="button" class="sc-oTqIG sc-jRyzjn etNkdD"><div class="sc-pkilo eJbMqu"></div><div class="sc-psFCR iVzmtv"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">calendar_view_week</i></div><div class="sc-qZtCU gYnjXV sc-pBqZt sc-jWRppu kwOQPU" data-tip="true" data-for="tooltip_components_8" currentitem="false"><p class="sc-fzoyTs sc-fzoNJl sc-qYSBj AgQUy">superheroes_power_matrix.csv</p><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_8" data-id="tooltip"><div class="sc-pzMyG ejxVHF">superheroes_power_matrix.csv</div></div></div></div></ul></ul></div></div><div class="sc-jCDCQp gEhbOS"><h6 class="sc-fznJRM sc-fznWqX sc-jWsAeH jtYrUI">Summary</h6><div class="sc-jCuCDU bWRxbe"><div class="sc-jHeIwz ehWxAg"><div class="sc-pkilo eJbMqu"><i color="#5F6368" sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bxBAgh sc-jRqDgO GtXfj">arrow_right</i></div><div class="sc-psFCR iVzmtv"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">folder</i></div><p class="sc-fzoyTs sc-fzoNJl sc-kOGAsw gzNnEm">8 files</p></div></div><div class="sc-jCuCDU bWRxbe"><div class="sc-jHeIwz ehWxAg"><div class="sc-pkilo eJbMqu"><i color="#5F6368" sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bxBAgh sc-jRqDgO GtXfj">arrow_right</i></div><div class="sc-psFCR iVzmtv"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">calendar_view_week</i></div><p class="sc-fzoyTs sc-fzoNJl sc-kOGAsw gzNnEm">220 columns</p></div></div></div></div><div class="sc-jRPqLV gbsul"><div class="sc-kJfOjQ jKYtbV"><div class="sc-kOhOoh llGMpx"><div class="sc-qZtCU gYnjXV" data-tip="true" data-for="tooltip_components_9" currentitem="false"><i color="rgba(0,0,0,0.7)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl dhwzZD sc-jxbMxN jKjGeH">chevron_left</i><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_9" data-id="tooltip"><div class="sc-pzMyG ejxVHF">Hide tree</div></div></div><h5 class="sc-fzpjYC sc-fznxsB sc-jSxdcF iAfOvP">characters.csv<span class="sc-khSPhy dQIYAy">(25.59 KB)</span></h5><div class="sc-qZtCU gYnjXV" data-tip="true" data-for="tooltip_components_10" currentitem="false"><i color="rgba(0,0,0,0.7)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl dhwzZD sc-jxbMxN jWisXD">get_app</i><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_10" data-id="tooltip"><div class="sc-pzMyG ejxVHF">Download</div></div></div><div class="sc-qZtCU gYnjXV" data-tip="true" data-for="tooltip_components_11" currentitem="false"><i color="rgba(0,0,0,0.7)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl dhwzZD sc-jxbMxN jWisXD">drive_spreadsheet_outline</i><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_11" data-id="tooltip"><div class="sc-pzMyG ejxVHF">Export to Google Sheets</div></div></div><div class="sc-qZtCU gYnjXV" data-tip="true" data-for="tooltip_components_12" currentitem="false"><i color="rgba(0,0,0,0.7)" sizevalue="24px" class="rmwc-icon google-material-icons sc-AxgMl dhwzZD sc-jxbMxN jWisXD">fullscreen</i><div class="__react_component_tooltip place-top type-dark " id="tooltip_components_12" data-id="tooltip"><div class="sc-pzMyG ejxVHF">Maximize view</div></div></div></div><div class="sc-jXPTiM OmPrX"><div class="sc-pBDgh MFSzn"><div class="sc-pJYhc jKXuSa"><nav class="sc-qYFEF ivNYCf mdc-tab-bar" style="--mdc-theme-on-primary:rgba(255, 255, 255, 1); --mdc-theme-primary:#008ABC;"><div class="mdc-tab-scroller"><div class="mdc-tab-scroller__scroll-area--scroll mdc-tab-scroller__scroll-area" style="margin-bottom: 0px;"><div class="mdc-tab-scroller__scroll-content"><button class="sc-qQJHc hwyIeY sc-pRwLP eiSOkZ mdc-tab--active mdc-ripple-upgraded sc-qQJHc hwyIeY sc-pRwLP eiSOkZ mdc-tab--active mdc-tab" aria-selected="true" tabindex="0"><div class="mdc-tab__content"><span class="mdc-tab__text-label">Detail</span><span class="mdc-tab-indicator mdc-tab-indicator--active"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></div><div class="mdc-tab__ripple mdc-ripple-upgraded"></div></button><button class="sc-qQJHc hwyIeY sc-pRwLP kOEHvh mdc-ripple-upgraded sc-qQJHc hwyIeY sc-pRwLP kOEHvh mdc-tab"><div class="mdc-tab__content"><span class="mdc-tab__text-label">Compact</span><span class="mdc-tab-indicator"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></div><div class="mdc-tab__ripple mdc-ripple-upgraded"></div></button><button class="sc-qQJHc hwyIeY sc-pRwLP kOEHvh mdc-ripple-upgraded sc-qQJHc hwyIeY sc-pRwLP kOEHvh mdc-tab"><div class="mdc-tab__content"><span class="mdc-tab__text-label">Column</span><span class="mdc-tab-indicator"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></div><div class="mdc-tab__ripple mdc-ripple-upgraded"></div></button></div></div></div></nav></div><div class="sc-pZRMK dXSFxQ"><div class="sc-oTQPx hGhIFU"><p class="sc-fzoyTs sc-fzoNJl sc-pclQs hQnddE">2 of 2 columns</p><i color="#5F6368" sizevalue="20px" class="rmwc-icon google-material-icons sc-AxgMl bxBAba">keyboard_arrow_down</i></div></div></div></div><div class="sc-pseYH eplJWl"><div class="sc-jSglzX ioYFqy"></div><div class="sc-jSglzX sc-jXzbGe hUurmq"></div><div class="sc-kcQTKx dUQExA"><div class="sc-qQVIU jbOVGh"><div class="sc-qZtax sc-kcIXMU jfDXAl"><div class="sc-khKUKN hlTvbP"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">vpn_key</i><span class="sc-fznzOf sc-fznMnq sc-jwCYSG gJmrFc">characterID</span><i color="#5F6368" sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bxBAgh">sort</i></div></div><div class="sc-qZtax sc-kcIXMU jfDXAl"><div class="sc-khKUKN hlTvbP"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bSGqGe">text_format</i><span class="sc-fznzOf sc-fznMnq sc-jwCYSG gJmrFc">name</span><i color="#5F6368" sizevalue="18px" class="rmwc-icon google-material-icons sc-AxgMl bxBAgh">sort</i></div></div></div></div><div class="sc-kijJQE kBlxRY"><div style="--mdc-theme-on-primary:rgba(255, 255, 255, 1); --mdc-theme-primary:#008ABC;"><button class="sc-fzoYHE CgXPR sc-jCdLbm dpjNDd mdc-ripple-upgraded sc-fzoYHE CgXPR sc-jCdLbm dpjNDd mdc-button mdc-button--outlined"><span class="mdc-button__label">Cancel</span></button></div><div style="--mdc-theme-on-primary:rgba(255, 255, 255, 1); --mdc-theme-primary:#008ABC;"><button class="sc-fzoYHE CgXPR sc-jCdLbm dpjNDd mdc-ripple-upgraded sc-fzoYHE CgXPR sc-jCdLbm dpjNDd mdc-button mdc-button--unelevated"><span class="mdc-button__label">Save</span></button></div></div><div class="sc-jwKUVf YfLCV"><div class="sc-qQVIU jbOVGh"><div class="sc-qZtax sc-pzPrL sc-pIwuy fpjjxV"><div style="height: 70px; width: 100%;"><div id="numeric-chart-Qk4S7F5p75OlokoLF6Td/versions/E6Jf7ttVJAguK9Whn4GV/files/characters.csv/columns/txskUGNLy5v3qgkVoVMk" class="sc-pccfi eofPXJ" style="height: 70px; width: 100%;"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 150px; height: 70px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="150" height="70" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_4"><clippath id="_ABSTRACT_RENDERER_ID_5"><rect x="0" y="0" width="150" height="70"></rect></clippath></defs><rect x="0" y="0" width="150" height="70" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="0" y="0" width="150" height="70" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://www.kaggle.com/dannielr/marvel-superheroes#_ABSTRACT_RENDERER_ID_5)"><g><rect x="0.5" y="1" width="17" height="68" stroke="none" stroke-width="0" fill="#007ba8"></rect><rect x="17.5" y="45" width="16" height="24" stroke="none" stroke-width="0" fill="#007ba8"></rect><rect x="33.5" y="7" width="17" height="62" stroke="none" stroke-width="0" fill="#007ba8"></rect><rect x="50.5" y="69.05303643724696" width="16" height="0.5" stroke="none" stroke-width="0" fill="#007ba8"></rect><rect x="66.5" y="69.27651821862348" width="17" height="0.5" stroke="none" stroke-width="0" fill="#007ba8"></rect><rect x="83.5" y="66.81821862348178" width="16" height="2.6817813765182166" stroke="none" stroke-width="0" fill="#007ba8"></rect><rect x="99.5" y="69.27651821862348" width="17" height="0.5" stroke="none" stroke-width="0" fill="#007ba8"></rect><rect x="116.5" y="69.27651821862348" width="16" height="0.5" stroke="none" stroke-width="0" fill="#007ba8"></rect><rect x="132.5" y="68" width="17" height="1" stroke="none" stroke-width="0" fill="#007ba8"></rect></g><g><rect x="0" y="69" width="150" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g></g><g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Label</th><th>Count</th></tr></thead><tbody><tr><td>1009144.00 - 1009987.90</td><td>494</td></tr><tr><td>1009987.90 - 1010831.80</td><td>180</td></tr><tr><td>1010831.80 - 1011675.70</td><td>450</td></tr><tr><td>1011675.70 - 1012519.60</td><td>4</td></tr><tr><td>1013363.50 - 1014207.40</td><td>2</td></tr><tr><td>1014207.40 - 1015051.30</td><td>24</td></tr><tr><td>1015051.30 - 1015895.20</td><td>2</td></tr><tr><td>1015895.20 - 1016739.10</td><td>2</td></tr><tr><td>1016739.10 - 1017583.00</td><td>12</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 80px; left: 160px; white-space: nowrap; font-family: Arial; font-size: 8px;">...</div><div></div></div></div></div><div class="sc-pkXmU gKTzry"><div class="sc-psTpt sc-qPhUy bvYFwg">1.01m</div><div class="sc-psTpt sc-qPhUy sc-qXdWX dnIeyj">1.02m</div></div></div><div class="sc-qZtax sc-pzPrL sc-plmcN gwMhDb"><h6 class="sc-fznJRM sc-fznWqX sc-pHMfe kkerVH">1169</h6><span class="sc-fznzOf sc-fznMnq sc-pQGUt gcUnss">unique values</span></div></div></div><div><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009220</div><div>Captain America</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1010740</div><div>Winter Soldier</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009471</div><div>Nick Fury</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009552</div><div>S.H.I.E.L.D.</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009228</div><div>Sharon Carter</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1011109</div><div>X-Men (Ultimate)</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1010808</div><div>Hawkeye (Kate Bishop)</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009515</div><div>Punisher</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009252</div><div>Crossbones</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009535</div><div>Red Skull</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1010899</div><div>Spitfire</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1011010</div><div>Spider-Man (Ultimate)</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009175</div><div>Beast</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009243</div><div>Colossus</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009257</div><div>Cyclops</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009310</div><div>Emma Frost</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009508</div><div>Kitty Pryde</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009718</div><div>Wolverine</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009726</div><div>X-Men</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009359</div><div>Hydra</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009454</div><div>Morbius</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009610</div><div>Spider-Man</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009368</div><div>Iron Man</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1010898</div><div>Sin</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1010676</div><div>Colleen Wing</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1010682</div><div>Misty Knight</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009367</div><div>Iron Fist (Danny Rand)</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009268</div><div>Deadpool</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009270</div><div>Deathbird</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009313</div><div>Gambit</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009363</div><div>Imperial Guard</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009546</div><div>Rogue</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1010338</div><div>Captain Marvel (Carol Danvers)</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009378</div><div>Jessica Jones</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009215</div><div>Luke Cage</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1011197</div><div>Scarlet Spider (Ben Reilly)</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1011426</div><div>Scarlet Spider (Kaine)</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009277</div><div>Domino</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009393</div><div>Lady Deathstrike</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009482</div><div>Omega Red</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009554</div><div>Sabretooth</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009705</div><div>Warpath</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009709</div><div>Weapon X</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009283</div><div>Dragon Man</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009299</div><div>Fantastic Four</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009312</div><div>Galactus</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009365</div><div>Inhumans</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009592</div><div>Silver Surfer</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009599</div><div>Skrulls</div></div></span><span class="sc-fzqAbL sc-fzqMAW dmEdIJ"><div class="sc-qQVIU sc-pkLDz QsMUo"><div>1009168</div><div>Banshee</div></div></span></div></div></div></div></div></div></div><div class="content-box"><div><div class="content-box__title-bar"><div class="ContentBox_Title-sc-6fbrxj hMwprG" style="line-height: 46px;">Similar Datasets</div></div></div><div class="content-box__content-section"><div class="Suggestions_SuggestionsWrapper-sc-1xk7v0c cKzQpD"><div class="block-link Suggestions_SuggestionWrapper-sc-1ef3k08 iLfEpC block-link--bordered"><a class="block-link__anchor" href="https://www.kaggle.com/fivethirtyeight/fivethirtyeight-comic-characters-dataset"></a><div class="Suggestions_ContentWrapper-sc-135ctbi koYTme"><div class="Suggestions_SuggestionImageWrapper-sc-148gjh6 imlfqt"><img alt="FiveThirtyEight Comic Characters Dataset" src="./Marvel Superheroes _ Kaggle_files/dataset-thumbnail(2).jpg" class="Suggestions_SuggestionImage-sc-1c4g2wk gIkTSX"></div><div class="Suggestions_InfoWrapper-sc-iy14r8 NWMrJ"><span class="Suggestions_InfoTitle-sc-1w3dl99 fUPSRk">FiveThirtyEight Comic Characters Dataset</span></div></div></div><div class="block-link Suggestions_SuggestionWrapper-sc-1ef3k08 iLfEpC block-link--bordered"><a class="block-link__anchor" href="https://www.kaggle.com/claudiodavi/superhero-set"></a><div class="Suggestions_ContentWrapper-sc-135ctbi koYTme"><div class="Suggestions_SuggestionImageWrapper-sc-148gjh6 imlfqt"><img alt="Super Heroes Dataset" src="./Marvel Superheroes _ Kaggle_files/dataset-thumbnail(3).jpg" class="Suggestions_SuggestionImage-sc-1c4g2wk gIkTSX"></div><div class="Suggestions_InfoWrapper-sc-iy14r8 NWMrJ"><span class="Suggestions_InfoTitle-sc-1w3dl99 fUPSRk">Super Heroes Dataset</span></div></div></div><div class="block-link Suggestions_SuggestionWrapper-sc-1ef3k08 iLfEpC block-link--bordered"><a class="block-link__anchor" href="https://www.kaggle.com/csanhueza/the-marvel-universe-social-network"></a><div class="Suggestions_ContentWrapper-sc-135ctbi koYTme"><div class="Suggestions_SuggestionImageWrapper-sc-148gjh6 imlfqt"><img alt="The Marvel Universe Social Network" src="./Marvel Superheroes _ Kaggle_files/dataset-thumbnail(4).jpg" class="Suggestions_SuggestionImage-sc-1c4g2wk gIkTSX"></div><div class="Suggestions_InfoWrapper-sc-iy14r8 NWMrJ"><span class="Suggestions_InfoTitle-sc-1w3dl99 fUPSRk">The Marvel Universe Social Network</span></div></div></div><div class="block-link Suggestions_SuggestionWrapper-sc-1ef3k08 iLfEpC block-link--bordered"><a class="block-link__anchor" href="https://www.kaggle.com/yrdasilva/marvel-characters-and-universes"></a><div class="Suggestions_ContentWrapper-sc-135ctbi koYTme"><div class="Suggestions_SuggestionImageWrapper-sc-148gjh6 imlfqt"><img alt="Marvel Characters and Universes" src="./Marvel Superheroes _ Kaggle_files/dataset-thumbnail(5).jpg" class="Suggestions_SuggestionImage-sc-1c4g2wk gIkTSX"></div><div class="Suggestions_InfoWrapper-sc-iy14r8 NWMrJ"><span class="Suggestions_InfoTitle-sc-1w3dl99 fUPSRk">Marvel Characters and Universes</span></div></div></div><div class="block-link Suggestions_SuggestionWrapper-sc-1ef3k08 iLfEpC block-link--bordered"><a class="block-link__anchor" href="https://www.kaggle.com/cenkbircanoglu/comic-books-classification"></a><div class="Suggestions_ContentWrapper-sc-135ctbi koYTme"><div class="Suggestions_SuggestionImageWrapper-sc-148gjh6 imlfqt"><img alt="Comic Books Images" src="./Marvel Superheroes _ Kaggle_files/dataset-thumbnail(6).jpg" class="Suggestions_SuggestionImage-sc-1c4g2wk gIkTSX"></div><div class="Suggestions_InfoWrapper-sc-iy14r8 NWMrJ"><span class="Suggestions_InfoTitle-sc-1w3dl99 fUPSRk">Comic Books Images</span></div></div></div></div></div></div><div class="content-box content-box--no-title"><div class="content-box__content-section content-box__content-section--no-title"><div class="content-box__simple-content-box"><div class="content-box__simple-content"><div class="Footer_Wrapper-sc-1fi89lh dGUtkp"><ul class="horizontal-list"><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default"><span>12,933 views</span></li><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default"><span>2,002 downloads</span></li><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default"><span>17 kernels</span></li><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default"><span>0 topics</span></li></ul><div class="Footer_MoreActivity-sc-9bjxpl juIjGY">View more activity</div></div></div></div></div></div></div></div><div class="sc-oTaAA fAxOLg"></div><div id="site-body" class="">
+    
+
+
+<div data-component-name="DatasetContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"scripts":[],"discussions":[],"pageMessages":[],"discussion":{"canDownvote":false,"dataUrl":"/forums/46846/topics.json","id":46846,"isRootLevel":false,"showSubscribeButton":false,"isSubscribed":false,"subscription":"unsubscribe","initialTopics":null,"paramValues":{"category":"all","page":1,"search":null,"group":"all","sortBy":"hot"}},"currentTab":"data","newTopic":{"allowAttachments":true,"authorRanking":null,"authorTier":"novice","authorType":"topic","forumId":46846,"parentName":"Marvel Superheroes","parentUrl":"/dannielr/marvel-superheroes"},"categories":{"type":"dataset","tags":[{"displayName":"comics","fontAwesomeIcon":"","id":2402,"name":"comics","fullPath":"culture and arts \u003e visual arts \u003e comics and animation \u003e comics","listingUrl":"/datasets?group=public\u0026tagids=2402","description":"Zow! Thwap! Blammo! This tag is for comic books and graphic novels, past and present.","isInherited":false,"datasetCount":161,"competitionCount":0,"scriptCount":8,"totalCount":169,"tagUrl":"/tags/comics"}]},"upvoteSuggestion":{"voteCount":45,"medalVoteCount":3,"upVoteUrl":"/dannielr/marvel-superheroes/vote","upVoters":[{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/1865806-kg.jpg","displayName":"L Lathrop","profileUrl":"/llathrop","tier":"Contributor","tierInt":1,"userId":1865806,"userName":"llathrop"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Jacob Miller","profileUrl":"/jakemiller13","tier":"Contributor","tierInt":1,"userId":2669838,"userName":"jakemiller13"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2836169-kg.PNG","displayName":"ozgurdogan","profileUrl":"/ozgurdogan646","tier":"Contributor","tierInt":1,"userId":2836169,"userName":"ozgurdogan646"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Darius","profileUrl":"/dariusiv","tier":"Novice","tierInt":0,"userId":1046723,"userName":"dariusiv"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2545303-kg.jpeg","displayName":"CristinaMarsh","profileUrl":"/cristinamarsh","tier":"Novice","tierInt":0,"userId":2545303,"userName":"cristinamarsh"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/4919722-gr.jpg","displayName":"James Wignall","profileUrl":"/jameswignall","tier":"Novice","tierInt":0,"userId":4919722,"userName":"jameswignall"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"NIKHIL TAMTA","profileUrl":"/nikhiltamta","tier":"Novice","tierInt":0,"userId":5236498,"userName":"nikhiltamta"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/4740889-gr.jpg","displayName":"Álvaro H.G","profileUrl":"/lvarohg","tier":"Novice","tierInt":0,"userId":4740889,"userName":"lvarohg"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Ken Popkin","profileUrl":"/krpopkin","tier":"Novice","tierInt":0,"userId":2529830,"userName":"krpopkin"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/1357690-gr.jpg","displayName":"BrianRoller","profileUrl":"/broller","tier":"Novice","tierInt":0,"userId":1357690,"userName":"broller"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2210403-gp.jpg","displayName":"Jacob Guymon","profileUrl":"/jguymon","tier":"Novice","tierInt":0,"userId":2210403,"userName":"jguymon"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Ak camera","profileUrl":"/akcamera","tier":"Novice","tierInt":0,"userId":2241563,"userName":"akcamera"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/641239-kg.JPG","displayName":"D\u0027Andrea","profileUrl":"/jlrdandrea","tier":"Novice","tierInt":0,"userId":641239,"userName":"jlrdandrea"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Mohhinder","profileUrl":"/mohhinder","tier":"Novice","tierInt":0,"userId":718367,"userName":"mohhinder"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/334344-gr.jpg","displayName":"BenJohnston","profileUrl":"/benjohnston0","tier":"Novice","tierInt":0,"userId":334344,"userName":"benjohnston0"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"James","profileUrl":"/jlabergas","tier":"Novice","tierInt":0,"userId":3491722,"userName":"jlabergas"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3497060-gr.jpg","displayName":"Fairuz Ishraque","profileUrl":"/fairaque","tier":"Novice","tierInt":0,"userId":3497060,"userName":"fairaque"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2859191-fb.jpg","displayName":"VaswatiH","profileUrl":"/vaswati2111","tier":"Novice","tierInt":0,"userId":2859191,"userName":"vaswati2111"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Atticus Johnston","profileUrl":"/atticusjohnston","tier":"Novice","tierInt":0,"userId":3942964,"userName":"atticusjohnston"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3962505-kg.JPG","displayName":"César Castañón","profileUrl":"/castares","tier":"Novice","tierInt":0,"userId":3962505,"userName":"castares"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Ivan Jalencas","profileUrl":"/ivanjalencas","tier":"Novice","tierInt":0,"userId":4043726,"userName":"ivanjalencas"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Anand Patel","profileUrl":"/anandp81","tier":"Novice","tierInt":0,"userId":4041205,"userName":"anandp81"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Aui Dee","profileUrl":"/auidee","tier":"Novice","tierInt":0,"userId":4251062,"userName":"auidee"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"utsav154","profileUrl":"/utsavsingh154","tier":"Novice","tierInt":0,"userId":3268220,"userName":"utsavsingh154"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Andrea Spinato","profileUrl":"/andreaspinato","tier":"Novice","tierInt":0,"userId":4308762,"userName":"andreaspinato"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Jophat518","profileUrl":"/jophat518","tier":"Novice","tierInt":0,"userId":4481749,"userName":"jophat518"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Julie Main","profileUrl":"/juliemain","tier":"Novice","tierInt":0,"userId":4522002,"userName":"juliemain"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2350301-gr.jpg","displayName":"Rob Riedlinger","profileUrl":"/armyofone","tier":"Novice","tierInt":0,"userId":2350301,"userName":"armyofone"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"LRocha","profileUrl":"/lrocha","tier":"Novice","tierInt":0,"userId":4612327,"userName":"lrocha"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2721564-gr.jpg","displayName":"JUST:BI","profileUrl":"/justinjbird","tier":"Novice","tierInt":0,"userId":2721564,"userName":"justinjbird"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2748600-gp.jpg","displayName":"Bethy","profileUrl":"/bethyhowl","tier":"Novice","tierInt":0,"userId":2748600,"userName":"bethyhowl"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2165837-gp.jpg","displayName":"WinSup","profileUrl":"/winsupan","tier":"Novice","tierInt":0,"userId":2165837,"userName":"winsupan"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Julia Las","profileUrl":"/jcvlas","tier":"Novice","tierInt":0,"userId":878538,"userName":"jcvlas"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3002390-kg.jpg","displayName":"Ryan Albertson","profileUrl":"/ryanalbertson","tier":"Novice","tierInt":0,"userId":3002390,"userName":"ryanalbertson"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"prossibly","profileUrl":"/prossibly","tier":"Novice","tierInt":0,"userId":2472280,"userName":"prossibly"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"ZHAO DI","profileUrl":"/oliviaskr","tier":"Novice","tierInt":0,"userId":2539948,"userName":"oliviaskr"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"prashantkhandelwal","profileUrl":"/prashantkhandelwal","tier":"Novice","tierInt":0,"userId":1194942,"userName":"prashantkhandelwal"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3087616-fb.jpg","displayName":"Ann Nguyen","profileUrl":"/annnguyen123","tier":"Novice","tierInt":0,"userId":3087616,"userName":"annnguyen123"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/1017550-gp.jpg","displayName":"Arjun","profileUrl":"/kingarjun","tier":"Novice","tierInt":0,"userId":1017550,"userName":"kingarjun"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3098834-fb.jpg","displayName":"Edsel Villadoz","profileUrl":"/edselv","tier":"Novice","tierInt":0,"userId":3098834,"userName":"edselv"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3138482-gr.jpg","displayName":"darkiller","profileUrl":"/blaking","tier":"Novice","tierInt":0,"userId":3138482,"userName":"blaking"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Nikhil","profileUrl":"/nikhilthampi","tier":"Novice","tierInt":0,"userId":2127331,"userName":"nikhilthampi"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/413850-gr.jpg","displayName":"Nanditha Elango","profileUrl":"/klaggle","tier":"Novice","tierInt":0,"userId":413850,"userName":"klaggle"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2727737-gr.jpg","displayName":"Rishav Sen","profileUrl":"/risstriker","tier":"Novice","tierInt":0,"userId":2727737,"userName":"risstriker"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"madara","profileUrl":"/tanmaylokhande1998","tier":"Novice","tierInt":0,"userId":2699556,"userName":"tanmaylokhande1998"}]},"readerGroupId":null,"writerGroupId":null,"collaborators":{"owner":{"userId":2057118,"groupId":null,"groupMemberCount":null,"profileUrl":"/dannielr","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","name":"Danniel R","slug":"dannielr","userTier":0,"joinDate":null,"type":"owner","isUser":true,"isGroup":false},"collaborators":[]},"isCollaborator":false,"deletionNeedsReview":false,"hasDatasetDoiApproved":false,"canSeeConfigAsCode":true,"canSeeDatasetTasks":false,"canSeeDatasetHashLink":true,"medalUrl":null,"datasetHashLink":null,"datasetId":38396,"internalNotes":"","isRemoved":false,"isVersionRemoved":false,"isFeatured":false,"isSuperFeatured":false,"scheduledToBeFeatured":null,"scheduledToBeUnFeatured":null,"scheduledToBeSuperFeatured":null,"scheduledToBeUnSuperFeatured":null,"datasetVersionId":60978,"datasetVersionNumber":3,"lastVersionNumber":3,"datasetUrl":"/dannielr/marvel-superheroes","datasetExternalUrl":"https://kaggle.com/dannielr/marvel-superheroes","originalImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/data-original.jpg?t=2018-07-23-09-38-05","coverImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-cover.jpg?t=2018-07-23-09-38-05","cardImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-card.jpg?t=2018-07-23-09-38-05","thumbnailImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-thumbnail.jpg?t=2018-07-23-09-38-05","license":{"id":4,"name":"Unknown","description":"Unknown","url":null,"displaySequence":null},"voteCount":45,"upVoteUrl":"/dannielr/marvel-superheroes/vote","creatorUserId":2057118,"creatorDisplayName":"Danniel R","ownerTwitter":null,"lastUpdated":"2018-07-29T07:50:32.103Z","downloadUrl":"/dannielr/marvel-superheroes/download","newNotebookUrl":"/kernels/notebooks/new?userName=surajkarki\u0026datasetVersionId=60978","newScriptUrl":"/kernels/scripts/new?userName=surajkarki\u0026datasetVersionId=60978","hasAlreadyVotedUp":false,"isOldDatasetVersion":false,"numberOfViews":12933,"numberOfDownloads":2002,"numberOfScripts":17,"numberOfTopics":0,"numberOfTasks":0,"canEdit":false,"canPerformOwnerTasks":false,"canEditSlug":false,"canEditPublishStatus":false,"canEditFeatureStatus":false,"canEditInternalNotes":false,"canEditDescription":false,"hideVersionStatuses":true,"cardImageLeft":1450,"cardImageTop":0,"cardImageWidth":1131,"cardImageHeight":1131,"coverImageLeft":0,"coverImageTop":164,"coverImageWidth":4308,"coverImageHeight":906,"datasetVersions":[{"id":60978,"slug":"marvel-superheroes","name":"Marvel Superheroes","creationDate":"2018-07-29T07:50:32.103Z","versionNumber":3,"versionNotes":"added marvel developers dataset","thumbnailImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-thumbnail.jpg?t=2018-07-23-09-38-05","datasetVersionUrl":"/dannielr/marvel-superheroes/version/3","status":"ready","userMessage":null,"isRemoved":false,"creator":{"id":2057118,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"Danniel R","profileUrl":"/dannielr","slug":"dannielr","maxFileSizeBytes":null,"userTier":null,"organizationMemberCount":null},"userSpecifiedSources":null,"doi":null},{"id":58471,"slug":"marvel-superheroes","name":"Marvel Superheroes","creationDate":"2018-07-23T10:00:25.303Z","versionNumber":2,"versionNotes":"marvel-dc excel fix","thumbnailImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-thumbnail.jpg?t=2018-07-23-09-38-05","datasetVersionUrl":"/dannielr/marvel-superheroes/version/2","status":"ready","userMessage":null,"isRemoved":false,"creator":{"id":2057118,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"Danniel R","profileUrl":"/dannielr","slug":"dannielr","maxFileSizeBytes":null,"userTier":null,"organizationMemberCount":null},"userSpecifiedSources":null,"doi":null},{"id":58465,"slug":"marvel-superheroes","name":"Marvel Superheroes","creationDate":"2018-07-23T09:24:04.997Z","versionNumber":1,"versionNotes":"Initial release","thumbnailImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-thumbnail.jpg?t=2018-07-23-09-38-05","datasetVersionUrl":"/dannielr/marvel-superheroes/version/1","status":"ready","userMessage":null,"isRemoved":false,"creator":{"id":2057118,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"Danniel R","profileUrl":"/dannielr","slug":"dannielr","maxFileSizeBytes":null,"userTier":null,"organizationMemberCount":null},"userSpecifiedSources":null,"doi":null}],"datasetVersionTotalCount":3,"feed":[],"topicId":null,"isNewTopic":false,"canSeeDeletionButton":false,"checklistDismissed":false,"type":"fileset","diffType":"versioned","checklistCollapsed":false,"isInFlight":false,"maintainerOrganization":null,"createdByKernel":null,"usabilityRating":{"score":0.4117647,"columnDescriptionScore":0.0,"coverImageScore":1.0,"fileDescriptionScore":0.0,"fileFormatScore":1.0,"licenseScore":0.0,"overviewScore":0.0,"provenanceScore":0.0,"publicKernelScore":1.0,"subtitleScore":1.0,"tagScore":1.0,"updateFrequencyScore":0.0},"licenseGroups":[{"id":1,"name":"Creative Commons","licenses":[{"id":1,"name":"CC0: Public Domain","description":"CC0: Public Domain \u003ca href=\u0022https://creativecommons.org/publicdomain/zero/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/publicdomain/zero/1.0/","displaySequence":1},{"id":3,"name":"CC BY-NC-SA 4.0","description":"CC BY-NC-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-sa/4.0/","displaySequence":2},{"id":8,"name":"CC BY-SA 4.0","description":"CC BY-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/4.0/","displaySequence":3},{"id":10,"name":"CC BY-SA 3.0","description":"CC BY-SA 3.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/3.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/3.0/","displaySequence":4},{"id":13,"name":"Attribution 4.0 International (CC BY 4.0)","description":"CC-BY 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by/4.0/","displaySequence":5},{"id":14,"name":"Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)","description":"CC-BY-NC 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc/4.0/","displaySequence":6},{"id":16,"name":"Attribution 3.0 Unported (CC BY 3.0)","description":"CC BY 3.0 \u003ca href=\u0022https://creativecommons.org/licenses/by/3.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by/3.0/","displaySequence":7},{"id":17,"name":"Attribution 3.0 IGO (CC BY 3.0 IGO)","description":"CC BY 3.0 IGO \u003ca href=\u0022https://creativecommons.org/licenses/by/3.0/igo/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by/3.0/igo/","displaySequence":8},{"id":19,"name":"Attribution-NonCommercial-ShareAlike 3.0 IGO (CC BY-NC-SA 3.0 IGO)","description":"CC BY-NC-SA 3.0 IGO \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-sa/3.0/igo/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-sa/3.0/igo/","displaySequence":9},{"id":22,"name":"Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)","description":"CC BY-ND 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nd/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nd/4.0/","displaySequence":10},{"id":23,"name":"Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)","description":"CC BY-NC-ND 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-nd/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-nd/4.0/","displaySequence":11}],"displaySequence":1},{"id":2,"name":"GPL","licenses":[{"id":9,"name":"GPL 2","description":"GPL 2 \u003ca href=\u0022http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html","displaySequence":1},{"id":25,"name":"GNU Lesser General Public License 3.0","description":"LGPL 3.0 \u003ca href=\u0022http://www.gnu.org/licenses/lgpl-3.0.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/lgpl-3.0.html","displaySequence":2},{"id":26,"name":"GNU Affero General Public License 3.0","description":"AGPL 3.0 \u003ca href=\u0022http://www.gnu.org/licenses/agpl-3.0.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/agpl-3.0.html","displaySequence":3},{"id":27,"name":"GNU Free Documentation License 1.3","description":"FDL 1.3 \u003ca href=\u0022http://www.gnu.org/licenses/fdl-1.3.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/fdl-1.3.html","displaySequence":4}],"displaySequence":2},{"id":3,"name":"Open Data Commons","licenses":[{"id":5,"name":"Database: Open Database, Contents: Database Contents","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: Database Contents \u003ca href=\u0022http://opendatacommons.org/licenses/dbcl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://opendatacommons.org/licenses/dbcl/1.0/","displaySequence":1},{"id":6,"name":"Database: Open Database, Contents: © Original Authors","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: © Original Authors","url":"http://opendatacommons.org/licenses/odbl/1.0/","displaySequence":2},{"id":15,"name":"ODC Public Domain Dedication and Licence (PDDL)","description":"PDDL  \u003ca href=\u0022https://opendatacommons.org/licenses/pddl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://opendatacommons.org/licenses/pddl/1.0/","displaySequence":3},{"id":24,"name":"ODC Attribution License (ODC-By)","description":"ODC-BY 1.0 \u003ca href=\u0022https://opendatacommons.org/licenses/by/1-0/index.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://opendatacommons.org/licenses/by/1-0/index.html","displaySequence":4}],"displaySequence":3},{"id":6,"name":"Community Data License","licenses":[{"id":20,"name":"Community Data License Agreement - Permissive - Version 1.0","description":"CDLA Permissive 1.0 \u003ca href=\u0022https://cdla.io/permissive-1-0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://cdla.io/permissive-1-0/","displaySequence":1},{"id":21,"name":"Community Data License Agreement - Sharing - Version 1.0","description":"CDLA Sharing 1.0 \u003ca href=\u0022https://cdla.io/sharing-1-0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://cdla.io/sharing-1-0/","displaySequence":2}],"displaySequence":4},{"id":4,"name":"Special","licenses":[{"id":7,"name":"World Bank Dataset Terms of Use","description":"World Bank Dataset Terms of Use \u003ca href=\u0022https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets","displaySequence":1},{"id":2,"name":"Reddit API Terms","description":"Reddit API Terms \u003ca href=\u0022https://www.reddit.com/wiki/api\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.reddit.com/wiki/api","displaySequence":2},{"id":18,"name":"U.S. Government Works","description":"U.S. Government Works \u003ca href=\u0022https://www.usa.gov/government-works/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.usa.gov/government-works/","displaySequence":3},{"id":28,"name":"EU ODP Legal Notice","description":"EU ODP Legal Notice \u003ca href=\u0022https://ec.europa.eu/info/legal-notice_en\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://ec.europa.eu/info/legal-notice_en","displaySequence":4}],"displaySequence":5},{"id":5,"name":"Other","licenses":[{"id":11,"name":"Data files © Original Authors","description":"Data files © Original Authors","url":null,"displaySequence":1},{"id":12,"name":"Other (specified in description)","description":"Other (specified in description)","url":null,"displaySequence":2},{"id":4,"name":"Unknown","description":"Unknown","url":null,"displaySequence":3}],"displaySequence":6}],"owners":[{"id":2695299,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2695299-gp.jpg","isOrganization":false,"name":"Suraj Karki","profileUrl":"/surajkarki","slug":"surajkarki","maxFileSizeBytes":null,"userTier":null,"organizationMemberCount":null},{"id":2057118,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"Danniel R","profileUrl":"/dannielr","slug":"dannielr","maxFileSizeBytes":null,"userTier":0,"organizationMemberCount":null}],"referrer":null,"convertToStandardCsvFormat":false,"overview":"Marvel superheroes stats and info","description":"","actions":[],"flags":[],"title":"Marvel Superheroes","slug":"marvel-superheroes","licenseId":4,"data":{"id":63428,"databundleId":40777,"databundleVersionType":"fileset","databundleDiffType":"versioned","versionNumber":1,"zipBlobFileId":null,"totalSize":20290510,"ownerInfo":{"databundleVersionId":63428,"dataset":{"datasetId":38396,"datasetVersionId":60978,"dataviewToken":"eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..KNsTBiW1w6Dah4miZI1gmw.jGdnmwkRvuWr-N86g5hg3T9pOALt266uY2xDZfhW6gAD5khkwYrqXzr3jDKArAKorGQLek3At_MPalVD08O9DuhGVrmN6ut5KrZ0U1imuRON4air02mLL02JRRz5c5eebCEsRk45P9En5QN7gVQN8wRklMwmx2i3Q64KZBs1FtLnJiUiTBhvrPWdmFEJ5wxAY-PyVMMxpaEZ0HdtYhKdc2MPWtVtU1CLP3nlE27BwP-HMH-aI7DQboZlDR9s5vZBsX4Qx-XlMwvBk7wEWb-Z9WMLLfdcPJ8l0rmRf35bIJ_4BFD4N2Bkki1TH48KaEQzHG_gyT1i2JN864gm8VodsdH72iQzBP-XWZ8g3x9HNVghYeSvexidzbkAgnI33O1IDbfaU3uXr5vy5kzdOQtYrk8yZyxfRl4ZDFcubLDuP_aXZZsH2rCmpFFZvqMXzRqv.h7yw2EzbAN6-fvqZhwWCbw","scope":"dannielr/marvel-superheroes"},"competition":null,"kernel":null,"previewsDisabled":false},"usesArchiveV2":true,"hasBundleDownload":true,"type":"databundleVersion","collapsed":false,"info":{"metrics":null,"archiveInfo":null,"archiveInfoV2":null,"blobFileInfo":null,"convertCsvInfo":null,"kernelReference":null},"settings":{"csvSettings":null,"bigQuerySettings":null,"bigQueryMirrorSettings":null,"storageSettings":{"webDataLocation":{"bucket":"kaggle-data-sets","path":"38396/60978/upload"},"sdsDataLocation":{"bucket":"kagglesdsdata","path":"datasets/38396/60978"},"responseDataLocation":null},"remoteUrlSettings":null,"remoteGithubSettings":null},"render":null,"totalChildren":0,"children":[],"firestorePath":"Qk4S7F5p75OlokoLF6Td/versions/E6Jf7ttVJAguK9Whn4GV","firestoreKey":"E6Jf7ttVJAguK9Whn4GV","name":"Marvel Superheroes","description":""},"isPrivate":false,"owner":{"id":2057118,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"Danniel R","profileUrl":"/dannielr","slug":"dannielr","maxFileSizeBytes":null,"userTier":0,"organizationMemberCount":null}});performance && performance.mark && performance.mark("DatasetContainer.componentCouldBootstrap");</script><script nonce="" type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none"
+    });
+</script>
+<script nonce="" type="text/javascript" async="" crossorigin="anonymous" src="./Marvel Superheroes _ Kaggle_files/MathJax.js"></script>
+
+
+</div></div><div class="sc-pZCbX cSPngZ"></div></div></div>
+<div data-component-name="NavigationContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"isTopNavigation":false});performance && performance.mark && performance.mark("NavigationContainer.componentCouldBootstrap");</script>
+<div id="site-body" class="hide">
+    
+
+
+<div data-component-name="DatasetContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"scripts":[],"discussions":[],"pageMessages":[],"discussion":{"canDownvote":false,"dataUrl":"/forums/46846/topics.json","id":46846,"isRootLevel":false,"showSubscribeButton":false,"isSubscribed":false,"subscription":"unsubscribe","initialTopics":null,"paramValues":{"category":"all","page":1,"search":null,"group":"all","sortBy":"hot"}},"currentTab":"data","newTopic":{"allowAttachments":true,"authorRanking":null,"authorTier":"novice","authorType":"topic","forumId":46846,"parentName":"Marvel Superheroes","parentUrl":"/dannielr/marvel-superheroes"},"categories":{"type":"dataset","tags":[{"displayName":"comics","fontAwesomeIcon":"","id":2402,"name":"comics","fullPath":"culture and arts \u003e visual arts \u003e comics and animation \u003e comics","listingUrl":"/datasets?group=public\u0026tagids=2402","description":"Zow! Thwap! Blammo! This tag is for comic books and graphic novels, past and present.","isInherited":false,"datasetCount":161,"competitionCount":0,"scriptCount":8,"totalCount":169,"tagUrl":"/tags/comics"}]},"upvoteSuggestion":{"voteCount":45,"medalVoteCount":3,"upVoteUrl":"/dannielr/marvel-superheroes/vote","upVoters":[{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/1865806-kg.jpg","displayName":"L Lathrop","profileUrl":"/llathrop","tier":"Contributor","tierInt":1,"userId":1865806,"userName":"llathrop"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Jacob Miller","profileUrl":"/jakemiller13","tier":"Contributor","tierInt":1,"userId":2669838,"userName":"jakemiller13"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2836169-kg.PNG","displayName":"ozgurdogan","profileUrl":"/ozgurdogan646","tier":"Contributor","tierInt":1,"userId":2836169,"userName":"ozgurdogan646"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Darius","profileUrl":"/dariusiv","tier":"Novice","tierInt":0,"userId":1046723,"userName":"dariusiv"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2545303-kg.jpeg","displayName":"CristinaMarsh","profileUrl":"/cristinamarsh","tier":"Novice","tierInt":0,"userId":2545303,"userName":"cristinamarsh"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/4919722-gr.jpg","displayName":"James Wignall","profileUrl":"/jameswignall","tier":"Novice","tierInt":0,"userId":4919722,"userName":"jameswignall"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"NIKHIL TAMTA","profileUrl":"/nikhiltamta","tier":"Novice","tierInt":0,"userId":5236498,"userName":"nikhiltamta"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/4740889-gr.jpg","displayName":"Álvaro H.G","profileUrl":"/lvarohg","tier":"Novice","tierInt":0,"userId":4740889,"userName":"lvarohg"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Ken Popkin","profileUrl":"/krpopkin","tier":"Novice","tierInt":0,"userId":2529830,"userName":"krpopkin"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/1357690-gr.jpg","displayName":"BrianRoller","profileUrl":"/broller","tier":"Novice","tierInt":0,"userId":1357690,"userName":"broller"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2210403-gp.jpg","displayName":"Jacob Guymon","profileUrl":"/jguymon","tier":"Novice","tierInt":0,"userId":2210403,"userName":"jguymon"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Ak camera","profileUrl":"/akcamera","tier":"Novice","tierInt":0,"userId":2241563,"userName":"akcamera"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/641239-kg.JPG","displayName":"D\u0027Andrea","profileUrl":"/jlrdandrea","tier":"Novice","tierInt":0,"userId":641239,"userName":"jlrdandrea"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Mohhinder","profileUrl":"/mohhinder","tier":"Novice","tierInt":0,"userId":718367,"userName":"mohhinder"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/334344-gr.jpg","displayName":"BenJohnston","profileUrl":"/benjohnston0","tier":"Novice","tierInt":0,"userId":334344,"userName":"benjohnston0"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"James","profileUrl":"/jlabergas","tier":"Novice","tierInt":0,"userId":3491722,"userName":"jlabergas"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3497060-gr.jpg","displayName":"Fairuz Ishraque","profileUrl":"/fairaque","tier":"Novice","tierInt":0,"userId":3497060,"userName":"fairaque"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2859191-fb.jpg","displayName":"VaswatiH","profileUrl":"/vaswati2111","tier":"Novice","tierInt":0,"userId":2859191,"userName":"vaswati2111"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Atticus Johnston","profileUrl":"/atticusjohnston","tier":"Novice","tierInt":0,"userId":3942964,"userName":"atticusjohnston"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3962505-kg.JPG","displayName":"César Castañón","profileUrl":"/castares","tier":"Novice","tierInt":0,"userId":3962505,"userName":"castares"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Ivan Jalencas","profileUrl":"/ivanjalencas","tier":"Novice","tierInt":0,"userId":4043726,"userName":"ivanjalencas"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Anand Patel","profileUrl":"/anandp81","tier":"Novice","tierInt":0,"userId":4041205,"userName":"anandp81"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Aui Dee","profileUrl":"/auidee","tier":"Novice","tierInt":0,"userId":4251062,"userName":"auidee"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"utsav154","profileUrl":"/utsavsingh154","tier":"Novice","tierInt":0,"userId":3268220,"userName":"utsavsingh154"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Andrea Spinato","profileUrl":"/andreaspinato","tier":"Novice","tierInt":0,"userId":4308762,"userName":"andreaspinato"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Jophat518","profileUrl":"/jophat518","tier":"Novice","tierInt":0,"userId":4481749,"userName":"jophat518"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Julie Main","profileUrl":"/juliemain","tier":"Novice","tierInt":0,"userId":4522002,"userName":"juliemain"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2350301-gr.jpg","displayName":"Rob Riedlinger","profileUrl":"/armyofone","tier":"Novice","tierInt":0,"userId":2350301,"userName":"armyofone"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"LRocha","profileUrl":"/lrocha","tier":"Novice","tierInt":0,"userId":4612327,"userName":"lrocha"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2721564-gr.jpg","displayName":"JUST:BI","profileUrl":"/justinjbird","tier":"Novice","tierInt":0,"userId":2721564,"userName":"justinjbird"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2748600-gp.jpg","displayName":"Bethy","profileUrl":"/bethyhowl","tier":"Novice","tierInt":0,"userId":2748600,"userName":"bethyhowl"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2165837-gp.jpg","displayName":"WinSup","profileUrl":"/winsupan","tier":"Novice","tierInt":0,"userId":2165837,"userName":"winsupan"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Julia Las","profileUrl":"/jcvlas","tier":"Novice","tierInt":0,"userId":878538,"userName":"jcvlas"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3002390-kg.jpg","displayName":"Ryan Albertson","profileUrl":"/ryanalbertson","tier":"Novice","tierInt":0,"userId":3002390,"userName":"ryanalbertson"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"prossibly","profileUrl":"/prossibly","tier":"Novice","tierInt":0,"userId":2472280,"userName":"prossibly"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"ZHAO DI","profileUrl":"/oliviaskr","tier":"Novice","tierInt":0,"userId":2539948,"userName":"oliviaskr"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"prashantkhandelwal","profileUrl":"/prashantkhandelwal","tier":"Novice","tierInt":0,"userId":1194942,"userName":"prashantkhandelwal"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3087616-fb.jpg","displayName":"Ann Nguyen","profileUrl":"/annnguyen123","tier":"Novice","tierInt":0,"userId":3087616,"userName":"annnguyen123"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/1017550-gp.jpg","displayName":"Arjun","profileUrl":"/kingarjun","tier":"Novice","tierInt":0,"userId":1017550,"userName":"kingarjun"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3098834-fb.jpg","displayName":"Edsel Villadoz","profileUrl":"/edselv","tier":"Novice","tierInt":0,"userId":3098834,"userName":"edselv"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3138482-gr.jpg","displayName":"darkiller","profileUrl":"/blaking","tier":"Novice","tierInt":0,"userId":3138482,"userName":"blaking"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Nikhil","profileUrl":"/nikhilthampi","tier":"Novice","tierInt":0,"userId":2127331,"userName":"nikhilthampi"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/413850-gr.jpg","displayName":"Nanditha Elango","profileUrl":"/klaggle","tier":"Novice","tierInt":0,"userId":413850,"userName":"klaggle"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2727737-gr.jpg","displayName":"Rishav Sen","profileUrl":"/risstriker","tier":"Novice","tierInt":0,"userId":2727737,"userName":"risstriker"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"madara","profileUrl":"/tanmaylokhande1998","tier":"Novice","tierInt":0,"userId":2699556,"userName":"tanmaylokhande1998"}]},"readerGroupId":null,"writerGroupId":null,"collaborators":{"owner":{"userId":2057118,"groupId":null,"groupMemberCount":null,"profileUrl":"/dannielr","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","name":"Danniel R","slug":"dannielr","userTier":0,"joinDate":null,"type":"owner","isUser":true,"isGroup":false},"collaborators":[]},"isCollaborator":false,"deletionNeedsReview":false,"hasDatasetDoiApproved":false,"canSeeConfigAsCode":true,"canSeeDatasetTasks":false,"canSeeDatasetHashLink":true,"medalUrl":null,"datasetHashLink":null,"datasetId":38396,"internalNotes":"","isRemoved":false,"isVersionRemoved":false,"isFeatured":false,"isSuperFeatured":false,"scheduledToBeFeatured":null,"scheduledToBeUnFeatured":null,"scheduledToBeSuperFeatured":null,"scheduledToBeUnSuperFeatured":null,"datasetVersionId":60978,"datasetVersionNumber":3,"lastVersionNumber":3,"datasetUrl":"/dannielr/marvel-superheroes","datasetExternalUrl":"https://kaggle.com/dannielr/marvel-superheroes","originalImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/data-original.jpg?t=2018-07-23-09-38-05","coverImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-cover.jpg?t=2018-07-23-09-38-05","cardImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-card.jpg?t=2018-07-23-09-38-05","thumbnailImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-thumbnail.jpg?t=2018-07-23-09-38-05","license":{"id":4,"name":"Unknown","description":"Unknown","url":null,"displaySequence":null},"voteCount":45,"upVoteUrl":"/dannielr/marvel-superheroes/vote","creatorUserId":2057118,"creatorDisplayName":"Danniel R","ownerTwitter":null,"lastUpdated":"2018-07-29T07:50:32.103Z","downloadUrl":"/dannielr/marvel-superheroes/download","newNotebookUrl":"/kernels/notebooks/new?userName=surajkarki\u0026datasetVersionId=60978","newScriptUrl":"/kernels/scripts/new?userName=surajkarki\u0026datasetVersionId=60978","hasAlreadyVotedUp":false,"isOldDatasetVersion":false,"numberOfViews":12933,"numberOfDownloads":2002,"numberOfScripts":17,"numberOfTopics":0,"numberOfTasks":0,"canEdit":false,"canPerformOwnerTasks":false,"canEditSlug":false,"canEditPublishStatus":false,"canEditFeatureStatus":false,"canEditInternalNotes":false,"canEditDescription":false,"hideVersionStatuses":true,"cardImageLeft":1450,"cardImageTop":0,"cardImageWidth":1131,"cardImageHeight":1131,"coverImageLeft":0,"coverImageTop":164,"coverImageWidth":4308,"coverImageHeight":906,"datasetVersions":[{"id":60978,"slug":"marvel-superheroes","name":"Marvel Superheroes","creationDate":"2018-07-29T07:50:32.103Z","versionNumber":3,"versionNotes":"added marvel developers dataset","thumbnailImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-thumbnail.jpg?t=2018-07-23-09-38-05","datasetVersionUrl":"/dannielr/marvel-superheroes/version/3","status":"ready","userMessage":null,"isRemoved":false,"creator":{"id":2057118,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"Danniel R","profileUrl":"/dannielr","slug":"dannielr","maxFileSizeBytes":null,"userTier":null,"organizationMemberCount":null},"userSpecifiedSources":null,"doi":null},{"id":58471,"slug":"marvel-superheroes","name":"Marvel Superheroes","creationDate":"2018-07-23T10:00:25.303Z","versionNumber":2,"versionNotes":"marvel-dc excel fix","thumbnailImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-thumbnail.jpg?t=2018-07-23-09-38-05","datasetVersionUrl":"/dannielr/marvel-superheroes/version/2","status":"ready","userMessage":null,"isRemoved":false,"creator":{"id":2057118,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"Danniel R","profileUrl":"/dannielr","slug":"dannielr","maxFileSizeBytes":null,"userTier":null,"organizationMemberCount":null},"userSpecifiedSources":null,"doi":null},{"id":58465,"slug":"marvel-superheroes","name":"Marvel Superheroes","creationDate":"2018-07-23T09:24:04.997Z","versionNumber":1,"versionNotes":"Initial release","thumbnailImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/38396/58465/32922e1f3c70aad9c2f2d4deb9a85a41/dataset-thumbnail.jpg?t=2018-07-23-09-38-05","datasetVersionUrl":"/dannielr/marvel-superheroes/version/1","status":"ready","userMessage":null,"isRemoved":false,"creator":{"id":2057118,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"Danniel R","profileUrl":"/dannielr","slug":"dannielr","maxFileSizeBytes":null,"userTier":null,"organizationMemberCount":null},"userSpecifiedSources":null,"doi":null}],"datasetVersionTotalCount":3,"feed":[],"topicId":null,"isNewTopic":false,"canSeeDeletionButton":false,"checklistDismissed":false,"type":"fileset","diffType":"versioned","checklistCollapsed":false,"isInFlight":false,"maintainerOrganization":null,"createdByKernel":null,"usabilityRating":{"score":0.4117647,"columnDescriptionScore":0.0,"coverImageScore":1.0,"fileDescriptionScore":0.0,"fileFormatScore":1.0,"licenseScore":0.0,"overviewScore":0.0,"provenanceScore":0.0,"publicKernelScore":1.0,"subtitleScore":1.0,"tagScore":1.0,"updateFrequencyScore":0.0},"licenseGroups":[{"id":1,"name":"Creative Commons","licenses":[{"id":1,"name":"CC0: Public Domain","description":"CC0: Public Domain \u003ca href=\u0022https://creativecommons.org/publicdomain/zero/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/publicdomain/zero/1.0/","displaySequence":1},{"id":3,"name":"CC BY-NC-SA 4.0","description":"CC BY-NC-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-sa/4.0/","displaySequence":2},{"id":8,"name":"CC BY-SA 4.0","description":"CC BY-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/4.0/","displaySequence":3},{"id":10,"name":"CC BY-SA 3.0","description":"CC BY-SA 3.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/3.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/3.0/","displaySequence":4},{"id":13,"name":"Attribution 4.0 International (CC BY 4.0)","description":"CC-BY 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by/4.0/","displaySequence":5},{"id":14,"name":"Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)","description":"CC-BY-NC 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc/4.0/","displaySequence":6},{"id":16,"name":"Attribution 3.0 Unported (CC BY 3.0)","description":"CC BY 3.0 \u003ca href=\u0022https://creativecommons.org/licenses/by/3.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by/3.0/","displaySequence":7},{"id":17,"name":"Attribution 3.0 IGO (CC BY 3.0 IGO)","description":"CC BY 3.0 IGO \u003ca href=\u0022https://creativecommons.org/licenses/by/3.0/igo/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by/3.0/igo/","displaySequence":8},{"id":19,"name":"Attribution-NonCommercial-ShareAlike 3.0 IGO (CC BY-NC-SA 3.0 IGO)","description":"CC BY-NC-SA 3.0 IGO \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-sa/3.0/igo/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-sa/3.0/igo/","displaySequence":9},{"id":22,"name":"Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)","description":"CC BY-ND 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nd/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nd/4.0/","displaySequence":10},{"id":23,"name":"Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)","description":"CC BY-NC-ND 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-nd/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-nd/4.0/","displaySequence":11}],"displaySequence":1},{"id":2,"name":"GPL","licenses":[{"id":9,"name":"GPL 2","description":"GPL 2 \u003ca href=\u0022http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html","displaySequence":1},{"id":25,"name":"GNU Lesser General Public License 3.0","description":"LGPL 3.0 \u003ca href=\u0022http://www.gnu.org/licenses/lgpl-3.0.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/lgpl-3.0.html","displaySequence":2},{"id":26,"name":"GNU Affero General Public License 3.0","description":"AGPL 3.0 \u003ca href=\u0022http://www.gnu.org/licenses/agpl-3.0.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/agpl-3.0.html","displaySequence":3},{"id":27,"name":"GNU Free Documentation License 1.3","description":"FDL 1.3 \u003ca href=\u0022http://www.gnu.org/licenses/fdl-1.3.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/fdl-1.3.html","displaySequence":4}],"displaySequence":2},{"id":3,"name":"Open Data Commons","licenses":[{"id":5,"name":"Database: Open Database, Contents: Database Contents","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: Database Contents \u003ca href=\u0022http://opendatacommons.org/licenses/dbcl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://opendatacommons.org/licenses/dbcl/1.0/","displaySequence":1},{"id":6,"name":"Database: Open Database, Contents: © Original Authors","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: © Original Authors","url":"http://opendatacommons.org/licenses/odbl/1.0/","displaySequence":2},{"id":15,"name":"ODC Public Domain Dedication and Licence (PDDL)","description":"PDDL  \u003ca href=\u0022https://opendatacommons.org/licenses/pddl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://opendatacommons.org/licenses/pddl/1.0/","displaySequence":3},{"id":24,"name":"ODC Attribution License (ODC-By)","description":"ODC-BY 1.0 \u003ca href=\u0022https://opendatacommons.org/licenses/by/1-0/index.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://opendatacommons.org/licenses/by/1-0/index.html","displaySequence":4}],"displaySequence":3},{"id":6,"name":"Community Data License","licenses":[{"id":20,"name":"Community Data License Agreement - Permissive - Version 1.0","description":"CDLA Permissive 1.0 \u003ca href=\u0022https://cdla.io/permissive-1-0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://cdla.io/permissive-1-0/","displaySequence":1},{"id":21,"name":"Community Data License Agreement - Sharing - Version 1.0","description":"CDLA Sharing 1.0 \u003ca href=\u0022https://cdla.io/sharing-1-0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://cdla.io/sharing-1-0/","displaySequence":2}],"displaySequence":4},{"id":4,"name":"Special","licenses":[{"id":7,"name":"World Bank Dataset Terms of Use","description":"World Bank Dataset Terms of Use \u003ca href=\u0022https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets","displaySequence":1},{"id":2,"name":"Reddit API Terms","description":"Reddit API Terms \u003ca href=\u0022https://www.reddit.com/wiki/api\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.reddit.com/wiki/api","displaySequence":2},{"id":18,"name":"U.S. Government Works","description":"U.S. Government Works \u003ca href=\u0022https://www.usa.gov/government-works/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.usa.gov/government-works/","displaySequence":3},{"id":28,"name":"EU ODP Legal Notice","description":"EU ODP Legal Notice \u003ca href=\u0022https://ec.europa.eu/info/legal-notice_en\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://ec.europa.eu/info/legal-notice_en","displaySequence":4}],"displaySequence":5},{"id":5,"name":"Other","licenses":[{"id":11,"name":"Data files © Original Authors","description":"Data files © Original Authors","url":null,"displaySequence":1},{"id":12,"name":"Other (specified in description)","description":"Other (specified in description)","url":null,"displaySequence":2},{"id":4,"name":"Unknown","description":"Unknown","url":null,"displaySequence":3}],"displaySequence":6}],"owners":[{"id":2695299,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/2695299-gp.jpg","isOrganization":false,"name":"Suraj Karki","profileUrl":"/surajkarki","slug":"surajkarki","maxFileSizeBytes":null,"userTier":null,"organizationMemberCount":null},{"id":2057118,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"Danniel R","profileUrl":"/dannielr","slug":"dannielr","maxFileSizeBytes":null,"userTier":0,"organizationMemberCount":null}],"referrer":null,"convertToStandardCsvFormat":false,"overview":"Marvel superheroes stats and info","description":"","actions":[],"flags":[],"title":"Marvel Superheroes","slug":"marvel-superheroes","licenseId":4,"data":{"id":63428,"databundleId":40777,"databundleVersionType":"fileset","databundleDiffType":"versioned","versionNumber":1,"zipBlobFileId":null,"totalSize":20290510,"ownerInfo":{"databundleVersionId":63428,"dataset":{"datasetId":38396,"datasetVersionId":60978,"dataviewToken":"eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..KNsTBiW1w6Dah4miZI1gmw.jGdnmwkRvuWr-N86g5hg3T9pOALt266uY2xDZfhW6gAD5khkwYrqXzr3jDKArAKorGQLek3At_MPalVD08O9DuhGVrmN6ut5KrZ0U1imuRON4air02mLL02JRRz5c5eebCEsRk45P9En5QN7gVQN8wRklMwmx2i3Q64KZBs1FtLnJiUiTBhvrPWdmFEJ5wxAY-PyVMMxpaEZ0HdtYhKdc2MPWtVtU1CLP3nlE27BwP-HMH-aI7DQboZlDR9s5vZBsX4Qx-XlMwvBk7wEWb-Z9WMLLfdcPJ8l0rmRf35bIJ_4BFD4N2Bkki1TH48KaEQzHG_gyT1i2JN864gm8VodsdH72iQzBP-XWZ8g3x9HNVghYeSvexidzbkAgnI33O1IDbfaU3uXr5vy5kzdOQtYrk8yZyxfRl4ZDFcubLDuP_aXZZsH2rCmpFFZvqMXzRqv.h7yw2EzbAN6-fvqZhwWCbw","scope":"dannielr/marvel-superheroes"},"competition":null,"kernel":null,"previewsDisabled":false},"usesArchiveV2":true,"hasBundleDownload":true,"type":"databundleVersion","collapsed":false,"info":{"metrics":null,"archiveInfo":null,"archiveInfoV2":null,"blobFileInfo":null,"convertCsvInfo":null,"kernelReference":null},"settings":{"csvSettings":null,"bigQuerySettings":null,"bigQueryMirrorSettings":null,"storageSettings":{"webDataLocation":{"bucket":"kaggle-data-sets","path":"38396/60978/upload"},"sdsDataLocation":{"bucket":"kagglesdsdata","path":"datasets/38396/60978"},"responseDataLocation":null},"remoteUrlSettings":null,"remoteGithubSettings":null},"render":null,"totalChildren":0,"children":[],"firestorePath":"Qk4S7F5p75OlokoLF6Td/versions/E6Jf7ttVJAguK9Whn4GV","firestoreKey":"E6Jf7ttVJAguK9Whn4GV","name":"Marvel Superheroes","description":""},"isPrivate":false,"owner":{"id":2057118,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"Danniel R","profileUrl":"/dannielr","slug":"dannielr","maxFileSizeBytes":null,"userTier":0,"organizationMemberCount":null}});performance && performance.mark && performance.mark("DatasetContainer.componentCouldBootstrap");</script><script nonce="" type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none"
+    });
+</script>
+<script nonce="" type="text/javascript" async="" crossorigin="anonymous" src="./Marvel Superheroes _ Kaggle_files/MathJax.js"></script>
+
+
+</div>
+
+
+
+    <!-- Cheers, web-5574896fb8-gcwvlp. -->
+
+    </main>
+
+
+<div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;" aria-hidden="true" tabindex="-1" title="Intercom" src="./Marvel Superheroes _ Kaggle_files/saved_resource.html"></iframe><script src="./Marvel Superheroes _ Kaggle_files/loader(1).js" async=""></script><div class="intercom-lightweight-app" aria-live="polite"><style id="intercom-lightweight-app-style">
+  @keyframes intercom-lightweight-app-launcher {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes intercom-lightweight-app-gradient {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes intercom-lightweight-app-messenger {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .intercom-lightweight-app {
+    position: fixed;
+    z-index: 2147483001;
+    width: 0;
+    height: 0;
+    font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+  }
+
+  .intercom-lightweight-app-gradient {
+    position: fixed;
+    z-index: 2147483002;
+    width: 500px;
+    height: 500px;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at bottom right,
+      rgba(29, 39, 54, 0.16) 0%,
+      rgba(29, 39, 54, 0) 72%);
+    animation: intercom-lightweight-app-gradient 200ms ease-out;
+  }
+
+  .intercom-lightweight-app-launcher {
+    position: fixed;
+    z-index: 2147483003;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #20BEFF;
+    cursor: pointer;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+    animation: intercom-lightweight-app-launcher 250ms ease;
+  }
+
+  .intercom-lightweight-app-launcher:focus {
+    outline: none;
+    
+  }
+
+  .intercom-lightweight-app-launcher-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    transition: transform 100ms linear, opacity 80ms linear;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg {
+    width: 28px;
+    height: 32px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg {
+    height: 56px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-launcher-custom-icon-open {
+    max-height: 36px;
+    max-width: 36px;
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize {
+    
+        opacity: 0;
+        transform: rotate(-60deg) scale(0);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize svg {
+    width: 16px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-messenger {
+    position: fixed;
+    z-index: 2147483003;
+    overflow: hidden;
+    background-color: white;
+    animation: intercom-lightweight-app-messenger 250ms ease-out;
+    
+        width: 376px;
+        height: calc(100% - 40px);
+        max-height: 704px;
+        min-height: 250px;
+        right: 20px;
+        bottom: 20px;
+        box-shadow: 0 5px 40px rgba(0,0,0,0.16);
+        border-radius: 8px;
+      
+  }
+
+  .intercom-lightweight-app-messenger-header {
+    height: 75px;
+    background: linear-gradient(
+      135deg,
+      rgb(32, 190, 255) 0%,
+      rgb(0, 131, 185) 100%
+    );
+  }
+
+  @media print {
+    .intercom-lightweight-app {
+      display: none;
+    }
+  }
+</style></div></body></html>

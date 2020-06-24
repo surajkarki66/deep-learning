@@ -16,7 +16,7 @@ class App:
             4: 'Four',
             5: 'Five'
         }
-        self.model = load_model('./model/vgg19_model.h5')
+        self.model = load_model('./model/ResNet-50_handsign.h5')
 
     def run(self):
         cap = cv2.VideoCapture(0)
