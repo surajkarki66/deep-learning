@@ -13,7 +13,7 @@ model = load_model('simple_model.h5')  # <-- Saved model path
 
 
 # input video file path
-input_file = 'test.mp4'
+input_file = 'avengers.mp4'
 
 
 # output file path
