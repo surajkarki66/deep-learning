@@ -1,2 +1,2 @@
-# machine-learning
-The machine learning journey starts from here.
+# deep learning
+The deep learning journey starts from here.
